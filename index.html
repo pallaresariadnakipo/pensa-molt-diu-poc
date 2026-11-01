@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pensa molt, diu poc</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,500;0,600;1,500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Patrick+Hand&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+/* Layout: una columna de lectura tranquil·la, amb les imatges com a protagonistes; el gargot de la Leia com a únic gest gràfic */
+:root{
+  --paper:#f7f6f4;
+  --paper-2:#eceae5;
+  --ink:#1d1d1f;
+  --graphite:#646876;
+  --wash:#a8252d;      /* vermell del vestit de la Leia */
+  --blush:#d9837d;     /* galtes: la timidesa */
+  --ph:#d7d7da;        /* recuadre de foto pendent */
+  --ph-ink:#5d6070;
+  --rule:#e4e2dc;
+  --f-display:"Crimson Pro","Minion Pro",Georgia,serif;
+  --f-body:"Literata",Georgia,"Times New Roman",serif;
+  --f-note:"Patrick Hand","Segoe Print","Bradley Hand",cursive;
+  --s-1:.875rem; --s0:1.0625rem; --s1:1.3rem; --s2:1.75rem; --s3:2.7rem; --s4:clamp(2.6rem,7vw,4.6rem);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1c1d23;--paper-2:#24262e;--ink:#ebe9e3;--graphite:#a6a9b5;--wash:#ec7b80;--blush:#e7a79e;--ph:#3a3c45;--ph-ink:#b3b5c0;--rule:#33353e;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#1c1d23;--paper-2:#24262e;--ink:#ebe9e3;--graphite:#a6a9b5;--wash:#ec7b80;--blush:#e7a79e;--ph:#3a3c45;--ph-ink:#b3b5c0;--rule:#33353e;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:var(--s0);line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:var(--s3)}
+h3{font-size:1.45rem;font-weight:600}
+p{margin:0}
+a{color:var(--wash)}
+:focus-visible{outline:2px solid var(--wash);outline-offset:3px}
+
+.wrap{max-width:68rem;margin:0 auto}
+.read{max-width:40rem}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule);margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)))}
+nav ul{list-style:none;margin:0 auto;max-width:68rem;display:flex;gap:clamp(.9rem,3vw,2rem);overflow-x:auto;padding-block:.7rem;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));scrollbar-width:none}
+nav ul::-webkit-scrollbar{display:none}
+nav a{font-family:var(--f-note);font-size:1.15rem;color:var(--graphite);text-decoration:none;white-space:nowrap}
+nav a:hover{color:var(--ink)}
+
+/* placeholders */
+.ph{background:var(--ph);border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;
+  text-align:center;padding:1rem;color:var(--ph-ink);max-width:100%;width:100%}
+.ph b{font-family:var(--f-note);font-weight:400;font-size:1.25rem;letter-spacing:.02em}
+.ph span{font-size:var(--s-1);font-family:var(--f-body);max-width:24ch;line-height:1.4}
+.r-portrait{aspect-ratio:3/4}.r-spread{aspect-ratio:2/1}.r-square{aspect-ratio:1}.r-land{aspect-ratio:4/3}
+figure{margin:0;display:flex;flex-direction:column;gap:.5rem;min-width:0}
+figcaption{font-family:var(--f-note);font-size:1.1rem;color:var(--graphite);line-height:1.3}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:clamp(1.5rem,4vw,2.5rem);padding-block:clamp(1.5rem,4vw,3rem) clamp(2.5rem,6vw,4rem)}
+.cover{margin:0;max-width:100%}
+.cover img{display:block;width:100%;height:auto;border-radius:2px}
+.hero-text{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:end;border-top:1px solid var(--rule);padding-top:1.8rem}
+.eyebrow{font-family:var(--f-note);font-size:1.2rem;color:var(--graphite);letter-spacing:.03em}
+.hero h1{font-size:clamp(2rem,4.4vw,3.1rem);margin-top:.4rem}
+.question{font-style:italic;font-size:var(--s1);line-height:1.45;color:var(--ink);border-left:3px solid var(--wash);padding-left:1rem;margin-bottom:1rem}
+.byline{font-size:var(--s-1);color:var(--graphite);line-height:1.6}
+.byline .pending{font-family:var(--f-note);font-size:1.05rem;background:var(--paper-2);padding:.05rem .4rem;border-radius:3px}
+
+/* sections */
+section{padding-block:clamp(3rem,7vw,5rem);border-top:1px solid var(--rule)}
+.pdf-box{margin-top:2.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding-block:1.2rem}
+.pdf-box p{color:var(--graphite);max-width:40rem}
+.pdf-btn{font-family:var(--f-note);font-size:1.15rem;border:1.5px solid var(--ink);color:var(--ink);padding:.6rem 1.2rem;border-radius:6px;text-decoration:none;white-space:nowrap}
+.pdf-btn:hover{background:var(--ink);color:var(--paper)}
+.to-marc{font-family:var(--f-note);font-size:1.15rem;color:var(--wash);text-decoration:none;width:fit-content;border-bottom:1.5px solid currentColor}
+.to-marc:hover{color:var(--ink)}
+.intro{display:flex;flex-direction:column;gap:1.4rem}
+.lang-tabs{display:flex;gap:.4rem;flex-wrap:wrap}
+.lang-tabs button{font:inherit;font-family:var(--f-note);font-size:1.15rem;padding:.35rem .9rem;border-radius:999px;border:1.5px solid var(--rule);background:transparent;color:var(--graphite);cursor:pointer}
+.lang-tabs button:hover{color:var(--ink);border-color:var(--ink)}
+.lang-tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.intro-panel{display:flex;flex-direction:column;gap:1rem;max-width:44rem}
+.intro-lede{font-family:var(--f-display);font-size:clamp(1.35rem,2.6vw,1.75rem);line-height:1.4;text-wrap:pretty}
+.sec-head{display:flex;flex-direction:column;gap:.4rem;margin-bottom:2rem}
+.sec-head .eyebrow{font-size:1.1rem}
+.stack{display:flex;flex-direction:column;gap:1.1rem}
+.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.lede{font-size:var(--s1);line-height:1.5}
+ul.points{margin:0;padding-left:1.2rem;display:flex;flex-direction:column;gap:.45rem}
+ul.points li::marker{color:var(--wash)}
+
+.method{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:2rem}
+.method div{display:flex;flex-direction:column;gap:.4rem;border-top:2px solid var(--ink);padding-top:.8rem}
+.method h3{font-size:1.15rem}
+.method p{font-size:.98rem;color:var(--graphite)}
+
+.theory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 3rem}
+.theory article{display:flex;flex-direction:column;gap:.5rem}
+.theory p{color:var(--ink)}
+
+blockquote{margin:0;font-family:var(--f-note);font-size:1.45rem;line-height:1.35;color:var(--wash);max-width:34ch}
+blockquote cite{display:block;font-family:var(--f-body);font-style:normal;font-size:var(--s-1);color:var(--graphite);margin-top:.4rem}
+
+details{border-top:1px solid var(--rule);padding-block:.8rem}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-family:var(--f-display);font-weight:600;font-size:1.3rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-note);font-size:1.4rem;line-height:1;color:var(--wash)}
+details[open] summary::after{content:"–"}
+.answers{display:flex;flex-direction:column;gap:.9rem;padding-top:.9rem}
+.answers p{font-size:.97rem}
+.answers strong{font-family:var(--f-note);font-weight:400;font-size:1.1rem;color:var(--graphite);display:block}
+
+.refs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.refs figure p{font-size:.97rem}
+.ref-img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:1000/712;object-fit:cover;border-radius:3px}
+.refs .ph{aspect-ratio:1000/712}
+.ref-img.contain{object-fit:contain;background:#fff;padding-block:.6rem}
+.pending{font-family:var(--f-note);font-size:1.05rem;background:var(--paper-2);padding:.05rem .4rem;border-radius:3px}
+
+.contrast{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin-block:2rem}
+img.page{display:block;width:100%;height:auto;max-width:100%;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.book{display:flex;flex-direction:column;gap:1rem}
+.book-stage{display:flex;justify-content:center;align-items:center;aspect-ratio:2.75;max-width:100%;background:var(--paper-2);border-radius:4px;padding:clamp(.5rem,2vw,1.5rem);touch-action:pan-y}
+.book-stage.single{aspect-ratio:1.376}
+.spread{display:grid;grid-template-columns:1fr;aspect-ratio:1.376;max-height:100%;max-width:100%;height:100%;box-shadow:0 2px 10px rgba(0,0,0,.18);position:relative;background:#fff}
+.spread.two{grid-template-columns:1fr 1fr;aspect-ratio:2.752}
+.spread img{display:block;width:100%;height:100%;object-fit:contain;min-width:0}
+.spread.two::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:24px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(0,0,0,.09),transparent);pointer-events:none}
+.book-nav{display:flex;align-items:center;justify-content:center;gap:1.4rem}
+.book-nav button{font:inherit;font-size:1.3rem;width:2.8rem;height:2.8rem;border-radius:50%;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer}
+.book-nav button:hover:not(:disabled){background:var(--ink);color:var(--paper)}
+.book-nav button:disabled{opacity:.3;cursor:default}
+#book-count{font-family:var(--f-note);font-size:1.15rem;color:var(--graphite);min-width:9rem;text-align:center;font-variant-numeric:tabular-nums}
+
+.process{display:flex;flex-direction:column;gap:2.5rem}
+.step{display:flex;flex-direction:column;gap:1.2rem}
+.step .text{max-width:40rem}
+.step .n{font-family:var(--f-note);font-size:1.15rem;color:var(--wash)}
+.step .text{display:flex;flex-direction:column;gap:.5rem}
+/* fila justificada: totes les imatges a la mateixa alçada, sense retallar */
+.thumbs{display:flex;gap:.8rem;align-items:flex-start}
+.thumbs > *{flex:var(--ar,1) 1 0;min-width:0}
+.thumbs > .ph{aspect-ratio:var(--ar,1)}
+.zoom{display:block;padding:0;border:0;background:none;cursor:zoom-in;border-radius:3px;overflow:hidden;width:100%}
+.zoom img{display:block;width:100%;height:auto;transition:transform .3s}
+.zoom:hover img{transform:scale(1.02)}
+@media (prefers-reduced-motion:reduce){.zoom img{transition:none}}
+dialog.viewer{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh}
+dialog.viewer::backdrop{background:rgba(20,20,24,.88)}
+dialog.viewer img{display:block;max-width:96vw;max-height:94vh;width:auto;height:auto;cursor:zoom-out}
+
+.final{text-align:left;display:flex;flex-direction:column;gap:1.2rem}
+.final .big{font-family:var(--f-display);font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:500;font-style:italic;line-height:1.15;max-width:22ch;text-wrap:balance}
+.final .big em{font-style:normal;color:var(--blush)}
+
+.biblio{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.9rem}
+.biblio li{font-size:.92rem;line-height:1.5;color:var(--graphite);overflow-wrap:anywhere}
+.biblio li b{color:var(--ink);font-weight:600}
+
+
+footer{padding-block:2.5rem 3rem;border-top:1px solid var(--rule);font-size:var(--s-1);color:var(--graphite)}
+
+@media (max-width:760px){
+  .two{grid-template-columns:minmax(0,1fr)}
+  .hero-text{grid-template-columns:minmax(0,1fr)}
+  .method,.refs{grid-template-columns:minmax(0,1fr)}
+  .theory{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:480px){
+  .contrast{grid-template-columns:minmax(0,1fr)}
+  .thumbs{flex-direction:column}
+  .thumbs > *{flex:none;width:100%}
+}
+</style>
+</head>
+<body>
+<nav aria-label="Seccions">
+  <ul>
+    <li><a href="#recerca">La recerca</a></li>
+    <li><a href="#entrevistes">Treball de camp</a></li>
+    <li><a href="#album">L'àlbum</a></li>
+    <li><a href="#proces">Procés</a></li>
+    <li><a href="#conclusions">Conclusions</a></li>
+  </ul>
+</nav>
+
+<main class="wrap">
+
+  <!-- INICI -->
+  <header class="hero" id="inici">
+    <figure class="cover">
+      <img src="img/01-portada.jpg" width="1800" height="1308" alt="Portada de l'àlbum «Pensa molt, diu poc», d'Ariadna Romero: la Leia, amb vestit vermell i les mans juntes, dreta damunt d'un munt de gargots negres.">
+    </figure>
+    <div class="hero-text">
+      <div>
+        <p class="eyebrow">Treball de recerca · 2n de Batxillerat</p>
+        <h1>La relació entre el text i la imatge en els àlbums il·lustrats</h1>
+      </div>
+      <div>
+        <p class="question">Com interactuen el text i la imatge en els àlbums il·lustrats per facilitar als infants la comprensió d'emocions com la timidesa?</p>
+        <p class="byline">
+          Ariadna Romero · Institut Celestí Bellera<br>
+          Tutora: Sandra Rusiñol Pujols · Curs 2025-2026
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRESENTACIÓ EN TRES IDIOMES -->
+  <section id="presentacio" class="intro">
+    <div class="lang-tabs" role="tablist" aria-label="Idioma">
+      <button type="button" role="tab" id="tab-ca" aria-controls="txt-ca" aria-selected="true" data-lang="ca">Català</button>
+      <button type="button" role="tab" id="tab-es" aria-controls="txt-es" aria-selected="false" data-lang="es" tabindex="-1">Castellano</button>
+      <button type="button" role="tab" id="tab-en" aria-controls="txt-en" aria-selected="false" data-lang="en" tabindex="-1">English</button>
+    </div>
+
+    <div class="intro-panel" role="tabpanel" id="txt-ca" aria-labelledby="tab-ca" lang="ca">
+      <p class="intro-lede">«Pensa molt, diu poc» és un àlbum il·lustrat sobre la timidesa, creat com a treball de recerca de 2n de Batxillerat. La Leia té moltes coses a dir, però la por d'equivocar-se fa que li costi expressar-les. A casa és soroll; a fora, silenci.</p>
+      <p>El treball estudia com interactuen el text i la imatge en els àlbums il·lustrats per facilitar als infants la comprensió d'emocions com la timidesa. He investigat sobre els àlbums il·lustrats i la lectura visual, he entrevistat tres mestres d'educació infantil i una bibliotecària, he analitzat diversos àlbums i, finalment, he creat el meu propi, il·lustrat a mà amb aquarel·les i llapis de colors.</p>
+      <a class="to-marc" href="memoria.html#marc-teoric">Llegeix el marc teòric →</a>
+    </div>
+
+    <div class="intro-panel" role="tabpanel" id="txt-es" aria-labelledby="tab-es" lang="es" hidden>
+      <p class="intro-lede">«Pensa molt, diu poc» (<em>Piensa mucho, dice poco</em>) es un álbum ilustrado sobre la timidez, creado como trabajo de investigación de 2.º de Bachillerato. Leia tiene muchas cosas que decir, pero el miedo a equivocarse hace que le cueste expresarlas. En casa es ruido; fuera, silencio.</p>
+      <p>El trabajo estudia cómo interactúan el texto y la imagen en los álbumes ilustrados para facilitar a los niños la comprensión de emociones como la timidez. He investigado sobre los álbumes ilustrados y la lectura visual, he entrevistado a tres maestras de educación infantil y a una bibliotecaria, he analizado varios álbumes y, finalmente, he creado el mío, ilustrado a mano con acuarelas y lápices de colores.</p>
+      <a class="to-marc" href="memoria.html#marc-teoric">Leer el marco teórico (en catalán) →</a>
+    </div>
+
+    <div class="intro-panel" role="tabpanel" id="txt-en" aria-labelledby="tab-en" lang="en" hidden>
+      <p class="intro-lede"><em>Pensa molt, diu poc</em> (“Thinks a lot, says little”) is a picture book about shyness, created as a final-year research project in upper secondary school (Batxillerat). Leia has so much to say, but the fear of getting it wrong keeps her quiet. At home she is noise; outside, silence.</p>
+      <p>The project looks at how text and image work together in picture books to help children understand emotions such as shyness. I researched picture books and visual literacy, interviewed three early-years teachers and a librarian, analysed several picture books and, finally, created my own, hand-illustrated in watercolour and coloured pencil.</p>
+      <a class="to-marc" href="memoria.html#marc-teoric">Read the theoretical framework (in Catalan) →</a>
+    </div>
+  </section>
+
+  <!-- RECERCA -->
+  <section id="recerca">
+    <div class="sec-head">
+      <p class="eyebrow">La recerca</p>
+      <h2>Un àlbum propi per entendre la timidesa</h2>
+    </div>
+    <div class="two">
+      <div class="stack read">
+        <p class="lede">Els àlbums il·lustrats són llibres en què el text i la imatge treballen conjuntament per explicar una història. El significat no es construeix només amb les paraules, sinó també amb les il·lustracions.</p>
+        <p>Aquest treball se centra en la timidesa, una experiència habitual durant la infància que de vegades costa d'expressar amb paraules. L'objectiu principal és crear un àlbum il·lustrat propi que ofereixi als infants un personatge amb qui identificar-se.</p>
+      </div>
+      <div class="stack">
+        <h3>Objectius</h3>
+        <ul class="points">
+          <li>Investigar la importància dels àlbums il·lustrats en l'educació infantil.</li>
+          <li>Analitzar com el text i la imatge es complementen.</li>
+          <li>Estudiar com els àlbums representen emocions, especialment la timidesa.</li>
+          <li>Analitzar exemples i els seus recursos visuals i narratius.</li>
+          <li>Crear un àlbum en què les imatges tinguin un paper rellevant en la narració.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="method">
+      <div><h3>Recerca d'informació</h3><p>Articles, pàgines web i altres fonts sobre àlbums il·lustrats, lectura visual i desenvolupament emocional.</p></div>
+      <div><h3>Entrevistes</h3><p>Tres mestres d'educació infantil i una bibliotecària, sobre com s'utilitzen els àlbums a l'aula i a la biblioteca.</p></div>
+      <div><h3>Anàlisi i creació</h3><p>Anàlisi de diversos àlbums i creació d'un àlbum propi aplicant el que s'ha après.</p></div>
+    </div>
+  </section>
+
+  <!-- MARC TEÒRIC -->
+  <section id="marc">
+    <div class="sec-head">
+      <p class="eyebrow">Marc teòric</p>
+      <h2>El que diuen les imatges</h2>
+    </div>
+    <div class="theory">
+      <article>
+        <h3>Text i imatge</h3>
+        <p>Les il·lustracions no són decoració: expliquen aspectes que el text no diu i aporten informació necessària per entendre la història. El lector interpreta tots dos llenguatges alhora, fa hipòtesis i completa el que no apareix escrit.</p>
+      </article>
+      <article>
+        <h3>La lectura visual</h3>
+        <p>És la capacitat d'interpretar imatges, colors, formes i composicions. Permet que els infants segueixin una història i entenguin les emocions dels personatges abans de saber llegir, i afavoreix el llenguatge, la creativitat i el pensament crític.</p>
+      </article>
+      <article>
+        <h3>Àlbums i emocions</h3>
+        <p>Molts àlbums tracten la por, la tristesa, la ràbia, la vergonya o la timidesa. Les expressions, els colors i els escenaris fan visible com se sent un personatge, i el llibre obre converses a l'escola i a casa.</p>
+      </article>
+      <article>
+        <h3>La timidesa</h3>
+        <p>Es manifesta com una sensació d'incomoditat o inseguretat davant d'altres persones, sobretot en situacions noves. No implica necessàriament una dificultat. Per acompanyar un infant tímid cal no forçar-lo ni etiquetar-lo, i oferir-li oportunitats progressives.</p>
+      </article>
+    </div>
+    <div class="pdf-box" id="marc-pdf">
+      <p>Memòria completa del treball, per si algú hi està interessat i la vol llegir sencera.</p>
+      <a class="pdf-btn" href="memoria.html">Llegeix la memòria →</a>
+    </div>
+  </section>
+
+  <!-- ENTREVISTES -->
+  <section id="entrevistes">
+    <div class="sec-head">
+      <p class="eyebrow">Resultats de la recerca</p>
+      <h2>Tres mestres i una bibliotecària</h2>
+    </div>
+    <div class="two">
+      <div class="stack read">
+        <p>Les mestres utilitzen els àlbums amb freqüència, sovint dins de rutines com l'hora del conte o la lectura dialògica. Destaquen que afavoreixen el llenguatge, la comprensió lectora, la imaginació i el pensament crític, i que les imatges són un suport clau per als infants que encara no llegeixen.</p>
+        <p>També els fan servir per treballar conflictes i emocions a l'aula. La bibliotecària hi afegeix un matís: els àlbums no s'haurien de reduir al treball de valors, perquè tenen una riquesa literària i visual pròpia.</p>
+      </div>
+      <blockquote>«Els àlbums no tenen edat, són per qui els troba.»<cite>Mestra 1</cite></blockquote>
+    </div>
+
+    <div style="margin-top:2.5rem">
+      <details>
+        <summary>Entrevista a tres mestres d'educació infantil</summary>
+        <div class="answers read">
+          <p><strong>Utilitza àlbums il·lustrats a l'aula? Amb quina freqüència?</strong>
+          <b>Mestra 1.</b> Sí. Un cop a la setmana a la franja horària de «L'hora del conte» i després, cada dia busquem una estoneta ja sigui després del pati, abans de marxar… per acabar un conte, fer preguntes, o continuar amb històries curtes…<br>
+          <b>Mestra 2.</b> Sí, sempre que puc.<br>
+          <b>Mestra 3.</b> Sí, gairebé cada dia en faig servir. Escullo un i en una setmana l'explico tres vegades. A l'escola fem lectura dialògica, és una metodologia educativa basada en el diàleg i la participació activa dels infants durant la lectura. No es tracta només de llegir un conte, sinó de parlar sobre el que es llegeix, compartir idees i construir significat entre tots. En la primera lectura llegeixo mentre veuen les imatges, ens fixem en la tapa, parlem de què creiem que anirà el conte, mirem com es diu l'autor/a i l'il·lustrador/a, i en acabar comentem de què ha anat, si els ha agradat… En les altres dues lectures els infants tenen una participació més activa amb preguntes, opinions o interpretacions. D'aquesta manera hi ha una millor comprensió, ho relacionen amb experiències personals i entre tots construïm el significat del text. A part, també n'explico per treballar els conflictes que han sortit durant la setmana. Busco molts àlbums que parlin de les emocions ja que a infantil els ajuda a posar paraules als seus sentiments. A més, també en faig servir per introduir continguts que es tractaran a l'aula durant aquells dies com per exemple per treballar les estacions.</p>
+
+          <p><strong>Quins aprenentatges o competències observa que es desenvolupen?</strong>
+          <b>Mestra 1.</b> Primer de tot destacar l'atenció, després infinitat d'aprenentatges o mecanismes que s'activen mentre l'expliquem: la concentració, la connexió entre el conte i les experiències prèvies dels infants, la motivació, despertar la imaginació, la lectura d'imatges, «ensenyar a mirar» més enllà, fer deduccions a través de les imatges o el context, expressar valoracions i opinions, respectar el torn de paraula, observar les tècniques que utilitzen els àlbums: ja sigui collage, aquarel·la… els colors utilitzats…<br>
+          <b>Mestra 2.</b> La comprensió lectora, la deducció, formulació d'hipòtesis, resumir…<br>
+          <b>Mestra 3.</b> Els àlbums ens ajuden a introduir i consolidar molts aprenentatges. És un recurs molt potent. Per una banda ens ajuden a treballar tota la part del llenguatge: vocabulari, comprensió oral, estructura de frases, frases fetes… També ens ajuden a iniciar la comprensió lectora, el pensament crític (ja que opinem sobre allò que hem vist o llegit), l'educació emocional, els valors… L'observació de la il·lustració no només com a decoració sinó com una imatge que ens explica coses, que ens fa pensar… Potencia la nostra creativitat i imaginació.</p>
+
+          <p><strong>Com interactuen el text i la imatge en el procés de comprensió?</strong>
+          <b>Mestra 1.</b> Un va lligat de la mà de l'altre. Mentre expliquem amb paraules l'àlbum, ha d'anar acompanyat amb la imatge per assegurar la seva comprensió. O per aquells alumnes que més els hi costa, oferir aquestes imatges per tal de reforçar la comprensió de l'àlbum o història.<br>
+          <b>Mestra 2.</b> Les imatges ajuden a la comprensió del text i actuen com a mesura universal de suport.<br>
+          <b>Mestra 3.</b> Quan explico un àlbum els infants d'infantil s'estan fixant en la imatge i jo els ajudo a entendre-la llegint el text ja que, ells encara no saben llegir. Una vegada coneixen la història, el llibre sovint queda al seu abast i ells el miren i el tornen a mirar observant les imatges que els expliquen la història. El text els ajuda a posar paraules a allò que estan veient i la imatge els ajuda a acabar d'entendre allò que han escoltat.</p>
+
+          <p><strong>Quin paper tenen en la relació dels infants amb la lectura?</strong>
+          <b>Mestra 1.</b> Doncs quan estan escoltant un conte, la mestra fa de modelatge en tots els sentits, i dona l'oportunitat d'adquirir així nou vocabulari, lèxic, estructures gramaticals, entonacions, fa diàlegs, tonalitats… un seguit d'habilitats que potenciaran la lectura en l'infant.<br>
+          <b>Mestra 2.</b> És el primer contacte per arribar al gust per la lectura.<br>
+          <b>Mestra 3.</b> Els infants que han tingut contacte amb molts àlbums il·lustrats acostumen a mostrar més interès per la lectura, una millor comprensió dels textos i un ús més ric del vocabulari. Amb el temps, aquests moments compartits de lectura, tant a l'escola com a casa amb la família, escoltant i comentant els àlbums, contribueixen a crear l'hàbit lector i a fomentar el gust per la lectura.</p>
+
+          <p><strong>Ha utilitzat algun àlbum per treballar valors o educació emocional?</strong>
+          <b>Mestra 1.</b> Sí, molts. De fet, utilitzem els àlbums per introduir un tema, un concepte, una idea, una conversa, un cercle restauratiu… Com a exemple: El punt, El monstre de colors, El banc blau, Ens tractem bé, L'Elmer, El peix irisat, Lili, El fil invisible… Vam fer un cercle restauratiu amb el conte Ens tractem bé ja que va sorgir un conflicte a l'aula i era el moment de tractar-lo. A través de l'àlbum, vam fer les diverses activitats, moltes converses, van donar les seves opinions, es van expressar, i van poder dir cadascú la seva. Vam fer acords: en diem paraules boniques, ens regalem dibuixos i missatges positius, ens parlem bé… A partir d'aquí vam fer una altra activitat que va ser un sociograma amb animals.<br>
+          <b>Mestra 2.</b> Les bruixes d'Arlet. Mostra que no totes les bruixes són dolentes i ajuda a construir nous coneixements.<br>
+          <b>Mestra 3.</b> Sí, com he comentat abans, els faig servir sovint. A l'aula fem cercles restauratius on l'activitat principal és l'explicació d'un àlbum relacionat amb les emocions que ens dóna peu a posar paraules al que passa a l'aula. Aquest curs hem explicat l'àlbum Ens tractem bé, Lili, Neda que neda… A I5 sempre treballem també El monstre de colors, ajuda molt als infants a posar paraules als seus sentiments. Un altre que m'ha funcionat molt bé és Tinc un volcà, els ajuda a entendre perquè a vegades s'enfaden i ajuda a tenir recursos davant de situacions que els fan enfadar.</p>
+
+          <p><strong>Recorda algun àlbum que hagi tingut un impacte especial?</strong>
+          <b>Mestra 1.</b> Sí, la veritat que molt d'ells. Lo bonic de la diversitat, és que cada infant s'enganxa amb un conte o altre. Així que cal oferir diversitat de temes, tècniques, històries, per tal que cadascú trobi o descobreixi allò que li agrada i es senti còmode. Podria destacar El peix irisat, ja que els hi crida molt l'atenció per l'escata brillant. A simple vista, la història en sí, sembla senzilla i superficial, però va més enllà. Per exemple, vam parlar que no està bé deixar sol a un peix per ser com és, o «arrencar-li» una escata per tal que pugui tenir amics…<br>
+          <b>Mestra 2.</b> Tots aporten alguna cosa.<br>
+          <b>Mestra 3.</b> Els que he anomenat fins ara. Aquest curs els ha encantat un que es diu Deixa'm en pau! Ens ha ajudat a millorar la relació entre un grupet d'amigues de la classe. El fil invisible també els ajuda en la familiarització a l'escola.</p>
+
+          <p><strong>Recomanaria l'ús dels àlbums il·lustrats a totes les escoles?</strong>
+          <b>Mestra 1.</b> Sí, els recomanaria. A més per totes les edats, no només per infantil. Els àlbums no tenen edat, són per qui els troba. Els recomanaria pel ventall de possibilitats que desperten als infants: artístiques, narratives, lingüístiques, imaginatives, de coneixements…<br>
+          <b>Mestra 2.</b> S'han de fer servir per establir les bases d'una bona competència lectora.<br>
+          <b>Mestra 3.</b> Sí, per mi és una eina molt útil. Cal potenciar-los també a primària. A infantil en general es fan servir molt però crec que s'haurien d'utilitzar en tots els nivells.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Entrevista a una bibliotecària</summary>
+        <div class="answers read">
+          <p><strong>Trajectòria professional i vinculació amb la literatura infantil i juvenil</strong>Jo vaig estudiar biblioteconomia i documentació, amb la idea de treballar en una biblioteca pública. Quan vaig començar la carrera, jo paral·lelament estava en el món del lleure infantil, feia de cap, i ja tenia relació amb els infants. Vaig anar descobrint la narració oral, i m'interessava cada vegada més el món dels contes. Per això, quan a la carrera vam començar a fer treballs, etc. vaig anar interessant-me en tot el que tenia a veure amb lectura i infància. I d'aquí que vaig anar-me especialitzant en aquest camp. Es podria dir que vaig descobrir la LIJ d'adolescent.</p>
+          <p><strong>Relació amb els àlbums il·lustrats a la biblioteca</strong>Els àlbums són una part molt important del fons de la biblioteca i per les seves característiques són aptes per tot tipus de públic, no només l'infantil. Això fa que el recomanem molt. A la biblioteca tenim un projecte que es diu laboratoris de lectura i es basa sobretot en la promoció dels àlbums. Et passo un enllaç del blog: <a href="https://brulab.art" target="_blank" rel="noopener">Brulab.art</a></p>
+          <p><strong>Què fa que un àlbum sigui especialment recomanable per a infants?</strong>Allò que fa especial un àlbum és que es tracta d'un suport on s'expliquen obres amb llenguatge textual, però també visual i també material, físic. Què vol dir això? Que els infants tarden uns anys a dominar el llenguatge textual, a aprendre a llegir, però des de ben petits, ja poden aprendre a llegir imatges. Amb els àlbums és ideal aquesta lectura compartida, adult acompanyant i infant. I tots dos van sumant experiències lectores fins a comprendre la història.</p>
+          <p><strong>Paper dels àlbums en la formació de l'hàbit lector</strong>Ara mateix, que els nostres infants són d'una generació molt visual, és un element clau envoltar la infància d'àlbums. Es fan edicions molt enginyoses, riques, interessants, diverses i divertides. I és una entrada al món de l'art, bàsica per a l'educació visual. I és una entrada al món literari.</p>
+          <p><strong>Contribueixen al llenguatge, la comprensió, l'expressió oral o la creativitat?</strong>La gràcia de l'àlbum és que en un llibre de deu pàgines, pots trobar tota la riquesa i competència literària d'una novel·la de 200 pàgines. No vol dir que sigui idèntic o que una cosa hagi de substituir la resta. Però hi ha àlbums que juguen amb el punt de vista, que tenen un fals narrador, que juguen amb el pas del temps, que utilitzen diferents tècniques artístiques segons aspectes literaris que vol destacar el text… és a dir, que des dels 0 anys, tu ja estàs començant l'itinerari lector dels infants. Quan ells neixen, no tenen un gust estètic adquirit, tot això ho adquireixen a partir de les imatges que veuran, al món, a la tele, la publicitat, la roba, etc. però també és una manera d'educar-los en la diferència, en veure un banc d'imatges ric, sense estereotips. Des de l'inici de l'itinerari lector, quan tu tries els llibres, estàs ajudant a l'infant a adquirir: esperit crític, educació visual, consciència poètica, gust estètic, interès per l'experimentació…</p>
+          <p><strong>Ha utilitzat àlbums per treballar valors o emocions?</strong>Jo no sóc massa partidària en utilitzar els àlbums per «treballar valors», perquè la lectura i la literatura, ja són prou importants, com hem vist fins ara, per si soles, perquè ajuden a adquirir llenguatge (i això és bàsic per poder pensar) i ajuden a veure el món des de diferents mirades, i això és bàsic per la democràcia. Indirectament tots els llibres tenen uns valors, però crec que el més important és que literàriament siguin bons, els personatges ben dibuixats, interessants, que permetin sentir-se reflectit i també siguin una porta a la fantasia (mirall i finestra, que deia Jella Lepman). Si aquesta pregunta la fas a algú que ha llegit una novel·la, sembla ridícula, cap adult tria un llibre per llegir segons si treballa les emocions… Però jo sí que utilitzo llibres que podries treure'n molts aprenentatges, si et refereixes a això: autors com Arnold Lobel, Leo Lionni, Gianni Rodari, Beatrice Alemagna…</p>
+          <p><strong>Algun àlbum amb un impacte especial?</strong>M'agrada molt explicar aquests tres àlbums: Neda que neda, de Leo Lionni; El petit globus vermell, de Iela Mari; i Afortunadament, de Remi Charlip.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- REFERENTS -->
+  <section id="referents">
+    <div class="sec-head">
+      <p class="eyebrow">Anàlisi d'exemples</p>
+      <h2>Referents</h2>
+    </div>
+    <div class="refs">
+      <figure>
+        <img class="ref-img contain" src="img/02-petita-jungla.jpg" width="412" height="568" alt="Coberta de «Petita a la jungla», de Marta Altés.">
+        <h3>Petita a la jungla</h3>
+        <p>De Marta Altés. Text senzill i imatges que aporten informació que no apareix escrita. Mostra com una història aparentment simple pot transmetre emocions a través de la relació entre text i imatge.</p>
+      </figure>
+      <figure>
+        <img class="ref-img" src="img/03-minimoni.jpg" width="1000" height="712" alt="Coberta de «T'avorreixes, Minimoni?», de Rocio Bonilla.">
+        <h3>T'avorreixes, Minimoni?</h3>
+        <p>De Rocio Bonilla (Animallibres). M'han inspirat especialment les seves il·lustracions: l'aquarel·la, el traç de llapis que es deixa veure i l'expressivitat dels personatges, molt propers a les tècniques que he fet servir a «Pensa molt, diu poc».</p>
+      </figure>
+      <figure>
+        <img class="ref-img contain" src="img/04-lola.jpg" width="813" height="1000" alt="Coberta de «La Lola busca l'arc de Sant Martí», de Naomi Jones i Gómez.">
+        <h3>La Lola busca l'arc de Sant Martí</h3>
+        <p>Text de Naomi Jones i il·lustracions de Gómez (NubeOcho). M'han inspirat les seves il·lustracions, l'ús del fons blanc i la manera de distribuir els elements a la pàgina, que deixa respirar els personatges i fa que l'atenció vagi directament a ells.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ÀLBUM -->
+  <section id="album">
+    <div class="sec-head">
+      <p class="eyebrow">La part pràctica</p>
+      <h2>La Leia té moltes coses a dir</h2>
+    </div>
+    <div class="two">
+      <div class="stack read">
+        <p class="lede">La Leia és una nena que té molts pensaments però que sovint no aconsegueix expressar-los amb paraules. La por d'equivocar-se o de ser jutjada fa que li costi parlar: <em>«I si m'equivoco?»</em></p>
+        <p>A casa riu, juga i parla. Fora de casa es queda en silenci, i a l'escola se sent sola. Aquest contrast entre els dos espais és un dels recursos narratius principals de l'àlbum.</p>
+        <p>El text és breu. Frases com <em>«Però fora de casa… calla»</em> o <em>«se sent sola»</em> es reforcen amb la manera com es dibuixa la Leia en cada lloc.</p>
+      </div>
+      <figure>
+        <img class="page" src="img/album/11.jpg" width="1205" height="876" alt="Pàgina de l'àlbum: la cara de la Leia envoltada d'un gargot negre, amb el text «Però arriba la por. —I si m'equivoco?»">
+        <figcaption>El gargot representa tot allò que pensa. Com més bloquejada se sent, més espai ocupa.</figcaption>
+      </figure>
+    </div>
+
+    <div class="contrast">
+      <figure>
+        <img class="page" src="img/album/12.jpg" width="1205" height="876" alt="Pàgina de l'àlbum: «A casa, la Leia és soroll.» Tres Leies de colors que riuen, juguen i parlen.">
+        <figcaption>A casa</figcaption>
+      </figure>
+      <figure>
+        <img class="page" src="img/album/13.jpg" width="1205" height="876" alt="Pàgina de l'àlbum: «Però fora de casa… calla.» La Leia sola, petita, entre grups d'infants que parlen.">
+        <figcaption>Fora de casa</figcaption>
+      </figure>
+    </div>
+
+    <div class="sec-head" style="margin-top:3rem;margin-bottom:1.5rem">
+      <h3 style="font-size:var(--s2);font-weight:700">L'àlbum, pàgina a pàgina</h3>
+      <p class="read" style="color:var(--graphite)">Il·lustrat a mà amb aquarel·les i llapis de colors. Passa les pàgines amb les fletxes, el teclat o lliscant el dit.</p>
+    </div>
+    <div class="book" id="book" aria-roledescription="visor de l'àlbum">
+      <div class="book-stage" id="book-stage" aria-live="polite"></div>
+      <div class="book-nav">
+        <button type="button" id="book-prev" aria-label="Pàgina anterior">←</button>
+        <p id="book-count">Coberta</p>
+        <button type="button" id="book-next" aria-label="Pàgina següent">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCÉS -->
+  <section id="proces">
+    <div class="sec-head">
+      <p class="eyebrow">Procés creatiu</p>
+      <h2>De l'esbós a l'àlbum muntat</h2>
+    </div>
+    <div class="process">
+      <div class="step">
+        <div class="text">
+          <p class="n">1 · La idea</p>
+          <h3>Una experiència pròpia</h3>
+          <p>La timidesa és un tema que m'ha acompanyat des de la infància. Això em va ajudar a imaginar com se sentia la Leia i quines situacions volia representar.</p>
+        </div>
+        <div class="thumbs">
+          <button class="zoom" type="button" style="--ar:1.0" data-full="img/14-esbossos-personatges.jpg"><img src="img/14-esbossos-personatges.jpg" width="1600" height="1600" alt="Pàgines de la llibreta amb els primers esbossos dels personatges del conte, a llapis." loading="lazy"></button>
+          <button class="zoom" type="button" style="--ar:1.162" data-full="img/15-esbossos-emocions.jpg"><img src="img/15-esbossos-emocions.jpg" width="1600" height="1377" alt="Esbossos de la protagonista en diferents emocions i situacions: frustració, timidesa, alegria, situacions en què se sent sola." loading="lazy"></button>
+          <button class="zoom" type="button" style="--ar:0.682" data-full="img/16-esbossos-protagonista.jpg"><img src="img/16-esbossos-protagonista.jpg" width="1092" height="1600" alt="Pàgina de llibreta amb proves de la protagonista dreta, amb una flor, saludant i corrent." loading="lazy"></button>
+        </div>
+      </div>
+      <div class="step">
+        <div class="text">
+          <p class="n">2 · El personatge</p>
+          <h3>Trobar la Leia</h3>
+          <p>Vaig fer moltes proves d'estil i vaig modificar l'aspecte de la Leia fins a aconseguir una imatge coherent. La dificultat principal va ser dibuixar-la des de diferents angles i en diverses posicions.</p>
+        </div>
+        <div class="thumbs">
+          <button class="zoom" type="button" style="--ar:0.809" data-full="img/17-leia-expressions.jpg"><img src="img/17-leia-expressions.jpg" width="1294" height="1600" alt="Proves de la Leia amb la cinta vermella: sis cares amb expressions diferents i tres cossos en moviment." loading="lazy"></button>
+          <button class="zoom" type="button" style="--ar:0.943" data-full="img/18-leia-color.jpg"><img src="img/18-leia-color.jpg" width="1509" height="1600" alt="Esbós a llapis d'un grup d'infants asseguts en rotllana, al costat d'una il·lustració a l'aquarel·la de la Leia asseguda abraçant-se els genolls." loading="lazy"></button>
+          <button class="zoom" type="button" style="--ar:1.225" data-full="img/19-leia-postures.jpg"><img src="img/19-leia-postures.jpg" width="1600" height="1306" alt="Fulls amb proves de la Leia en moltes postures: saltant, estirada, amb els braços oberts." loading="lazy"></button>
+        </div>
+      </div>
+      <div class="step">
+        <div class="text">
+          <p class="n">3 · L'estructura</p>
+          <h3>La maqueta</h3>
+          <p>Abans de les il·lustracions definitives vaig fer una maqueta per organitzar les escenes i imaginar com quedaria cada pàgina.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="text">
+          <p class="n">4 · Les il·lustracions</p>
+          <h3>Aquarel·la, llapis i el gargot</h3>
+          <p>Il·lustracions fetes a mà, principalment amb aquarel·les i llapis de colors. També vaig treballar el gargot que representa els pensaments de la Leia.</p>
+        </div>
+        <div class="thumbs">
+          <button class="zoom" type="button" style="--ar:0.75" data-full="img/21-esbossos-mur.jpg"><img src="img/21-esbossos-mur.jpg" width="1200" height="1600" alt="Desenes de fulls d'esbossos de la Leia escampats: postures, salts, escenes al llit i a l'aula, proves de color i una primera portada «Pensa molt i diu poc»." loading="lazy"></button>
+          <button class="zoom" type="button" style="--ar:1.616" data-full="img/22-leia-asseguda.jpg"><img src="img/22-leia-asseguda.jpg" width="1600" height="990" alt="Fulls amb proves de la Leia asseguda a terra amb bolígraf vermell i blau, amb la nota «vol dir alguna cosa però no surt», i dues proves acolorides amb llapis de colors." loading="lazy"></button>
+        </div>
+      </div>
+      <div class="step">
+        <div class="text">
+          <p class="n">5 · El muntatge</p>
+          <h3>Escaneig i maquetació</h3>
+          <p>Vaig escanejar les il·lustracions, hi vaig fer les últimes correccions a l'ordinador, vaig afegir el text i vaig provar diferents maquetacions fins al muntatge definitiu.</p>
+        </div>
+        <div class="thumbs">
+          <button class="zoom" type="button" style="--ar:1.816" data-full="img/23-indesign-doble.jpg"><img src="img/23-indesign-doble.jpg" width="1600" height="881" alt="Captura d'InDesign amb una doble pàgina de l'àlbum en maquetació: moltes Leies en vermell i blau repartides per la pàgina." loading="lazy"></button>
+          <button class="zoom" type="button" style="--ar:1.422" data-full="img/24-indesign-text.jpg"><img src="img/24-indesign-text.jpg" width="1600" height="1125" alt="Captura d'InDesign d'una pàgina de l'àlbum: «A casa, la Leia és soroll.» amb tres il·lustracions de la Leia i les paraules «Riu» i «Juga»." loading="lazy"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSIONS -->
+  <section id="conclusions">
+    <div class="final">
+      <p class="eyebrow">Conclusions</p>
+      <p class="big">De vegades, una sola paraula <em>ja és molt.</em></p>
+      <div class="two" style="margin-top:1rem">
+        <div class="stack read">
+          <p>El text i la imatge interactuen de manera complementària. El text guia l'acció, i la imatge amplia aquesta informació, mostra el que no es diu i fa visible l'estat emocional dels personatges.</p>
+          <p>A «Pensa molt, diu poc» la Leia parla molt poc, però les il·lustracions deixen veure el que passa dins seu: el gargot, el contrast entre casa i escola i la manera com es dibuixa. La part visual no és un complement del relat, sinó una part essencial de la narració.</p>
+        </div>
+        <div class="stack read">
+          <p>El final és intencionadament senzill. La Leia no deixa de ser tímida de cop: aconsegueix dir «Jo». Encara que només sigui una paraula, per a ella és un inici.</p>
+          <p>Com a millora, m'hauria agradat tenir més temps per practicar la il·lustració dels personatges i revisar alguns detalls. També seria interessant veure com reaccionen diferents infants davant de l'àlbum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIBLIOGRAFIA -->
+  <section id="bibliografia">
+    <div class="sec-head">
+      <p class="eyebrow">Referències</p>
+      <h2>Bibliografia</h2>
+    </div>
+    <ol class="biblio read">
+      <li><b>AIDA FERNÁNDEZ PSICÓLOGA</b> (s. d.). La timidez infantil. Disponible a: <a href="https://aidafernandezpsicologa.com/la-timidez-infantil/" target="_blank" rel="noopener">aidafernandezpsicologa.com</a> [Consulta: 16 de desembre de 2025].</li>
+      <li><b>Àlbum il·lustrat</b> (s. d.). Viquipèdia, l'enciclopèdia lliure. Disponible a: <a href="https://ca.wikipedia.org/wiki/%C3%80lbum_il%C2%B7lustrat" target="_blank" rel="noopener">ca.wikipedia.org</a> [Consulta: 10 de gener de 2026].</li>
+      <li><b>ALOMAR BENNÀSSAR, Bàrbara Maria</b> (2017). El món de les emocions, a partir dels contes, a l'etapa de l'Educació Infantil: expressió i autocontrol. Universitat de les Illes Balears. Disponible a: <a href="https://dspace.uib.es/xmlui/bitstream/handle/11201/2888/Alomar_Bennassar_Barbara_Maria.pdf?sequence=1&amp;isAllowed=y" target="_blank" rel="noopener">dspace.uib.es</a> [Consulta: 15 de desembre de 2025].</li>
+      <li><b>CONTRA EL CÁNCER</b> (s. d.). Les emocions. Disponible a: <a href="https://www.contraelcancer.es/sites/default/files/migration/actualidad/publicaciones/documentos/les-emocions.pdf" target="_blank" rel="noopener">contraelcancer.es</a> [Consulta: 20 de desembre de 2025].</li>
+      <li><b>DOCENTES ALGAR EDITORIAL</b> (s. d.). Álbumes ilustrados infantiles en el aula. Disponible a: <a href="https://docentes.algareditorial.com/blog/48/albumes-ilustrados-infantiles-aula" target="_blank" rel="noopener">docentes.algareditorial.com</a> [Consulta: 8 de gener de 2026].</li>
+      <li><b>DOCENTS.CAT</b> (s. d.). Àlbums il·lustrats. Disponible a: <a href="https://docents.cat/albums-illustrats/" target="_blank" rel="noopener">docents.cat</a> [Consulta: 12 de març de 2026].</li>
+      <li><b>DOCENTS.CAT</b> (s. d.). Què és un àlbum il·lustrat i quins són els seus trets característics? Disponible a: <a href="https://docents.cat/masterclass/que-es-un-album-illustrat-i-quins-son-els-seus-trets-caracteristics/" target="_blank" rel="noopener">docents.cat</a> [Consulta: 18 d'abril de 2025].</li>
+      <li><b>EL SITIO DE LAS PALABRAS</b> (s. d.). Leer una pintura. Disponible a: <a href="https://elsitiodelaspalabras.es/leer-una-pintura/" target="_blank" rel="noopener">elsitiodelaspalabras.es</a> [Consulta: 10 de febrer de 2026].</li>
+      <li><b>ESCOLA DE SALUT SANT JOAN DE DÉU</b> (s. d.). Consells per a vèncer la timidesa durant la infància. Disponible a: <a href="https://escolasalut.sjdhospitalbarcelona.org/ca/consells-salut/salut-mental/consells-vencer-timidesa-durant-infancia" target="_blank" rel="noopener">escolasalut.sjdhospitalbarcelona.org</a> [Consulta: 5 de març de 2026].</li>
+      <li><b>FUNDACIÓ MENIÑOS</b> (s. d.). Educación emocional infantil. Disponible a: <a href="https://meninos.org/es/educacion-emocional-infantil/" target="_blank" rel="noopener">meninos.org</a> [Consulta: 25 de febrer de 2026].</li>
+      <li><b>FUNDESPLAI</b> (s. d.). Com treballem les emocions amb infants de 3 a 8 anys. Disponible a: <a href="https://esplai.fundesplai.org/wp-content/uploads/sites/40/2017/02/Com-treballem-les-emocions-amb-infants-de-3-a-8-anys.-Origo.pdf" target="_blank" rel="noopener">esplai.fundesplai.org</a> [Consulta: 22 de gener de 2026].</li>
+      <li><b>LIBRERÍA ASTRID</b> (s. d.). Qué es un álbum ilustrado: guía para entenderlo y disfrutarlo. Disponible a: <a href="https://www.libreriaastrid.com/especial/que-es-un-album-ilustrado-guia-para-entenderlo-y-disfrutarlo/73/" target="_blank" rel="noopener">libreriaastrid.com</a> [Consulta: 15 de gener de 2026].</li>
+      <li><b>MINIOPS – INSTITUT OBERT DE CATALUNYA</b> (s. d.). Miniops. Disponible a: <a href="https://miniops.ioc.cat/10/5/index.html" target="_blank" rel="noopener">miniops.ioc.cat</a> [Consulta: 20 de desembre de 2025].</li>
+      <li><b>SERÀS UIB – UNIVERSITAT DE LES ILLES BALEARS</b> (s. d.). Les emocions: què són, categories, com podem treballar-les… Disponible a: <a href="https://seras.uib.cat/orientacio/recursos/Les-emocions-que-son-categories-com-podem.cid581227" target="_blank" rel="noopener">seras.uib.cat</a> [Consulta: 18 de febrer de 2026].</li>
+      <li><b>TOTNENS.CAT</b> (s. d.). La importància dels àlbums il·lustrats. Disponible a: <a href="https://totnens.cat/la-importancia-dels-albums-illustrats/" target="_blank" rel="noopener">totnens.cat</a> [Consulta: 14 de desembre de 2025].</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>«Pensa molt, diu poc» · Treball de recerca d'Ariadna Romero · Institut Celestí Bellera · Curs 2025-2026 · <a href="#bibliografia">Bibliografia</a></p>
+</footer>
+
+<script>
+(function(){
+  var N=28, stage=document.getElementById('book-stage'), prev=document.getElementById('book-prev'),
+      next=document.getElementById('book-next'), count=document.getElementById('book-count');
+  if(!stage) return;
+  function src(n){return 'img/album/'+(n<10?'0':'')+n+'.jpg';}
+  var spreads=[[1]]; for(var p=2;p<N;p+=2) spreads.push([p,p+1]); spreads.push([N]);
+  var singles=[]; for(var q=1;q<=N;q++) singles.push([q]);
+  var mq=matchMedia('(max-width: 640px)'), views, i=0, curPage=1;
+  function label(v){
+    if(v[0]===1) return 'Coberta';
+    if(v[0]===N) return 'Contracoberta';
+    return (v.length>1?'Pàgines '+v[0]+'–'+v[1]:'Pàgina '+v[0])+' de '+N;
+  }
+  function render(){
+    var v=views[i]; curPage=v[0];
+    stage.classList.toggle('single', v.length===1 || mq.matches);
+    stage.innerHTML='<div class="spread'+(v.length>1?' two':'')+'">'+v.map(function(n){
+      return '<img src="'+src(n)+'" width="1205" height="876" alt="Pàgina '+n+' de l\'àlbum «Pensa molt, diu poc»">';}).join('')+'</div>';
+    count.textContent=label(v);
+    prev.disabled=i===0; next.disabled=i===views.length-1;
+    [i-1,i+1].forEach(function(k){ if(views[k]) views[k].forEach(function(n){ var im=new Image(); im.src=src(n); }); });
+  }
+  function setMode(){
+    views=mq.matches?singles:spreads;
+    i=0; for(var k=0;k<views.length;k++){ if(views[k].indexOf(curPage)>-1){ i=k; break; } }
+    render();
+  }
+  function go(d){ var j=i+d; if(j<0||j>=views.length) return; i=j; render(); }
+  prev.addEventListener('click',function(){go(-1);});
+  next.addEventListener('click',function(){go(1);});
+  stage.addEventListener('click',function(e){ var r=stage.getBoundingClientRect(); go(e.clientX<r.left+r.width/2?-1:1); });
+  document.addEventListener('keydown',function(e){
+    var b=document.getElementById('book').getBoundingClientRect();
+    if(b.bottom<0||b.top>innerHeight) return;
+    if(e.key==='ArrowRight') go(1); else if(e.key==='ArrowLeft') go(-1);
+  });
+  var x0=null;
+  stage.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  stage.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40) go(dx<0?1:-1); x0=null; });
+  if(mq.addEventListener) mq.addEventListener('change',setMode);
+  setMode();
+})();
+</script>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.lang-tabs [role="tab"]'));
+  if(!tabs.length) return;
+  function pick(lang,focus){
+    tabs.forEach(function(t){
+      var on=t.dataset.lang===lang;
+      t.setAttribute('aria-selected',on); t.tabIndex=on?0:-1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
+      if(on&&focus) t.focus();
+    });
+    try{localStorage.setItem('tdr-lang',lang);}catch(e){}
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){pick(t.dataset.lang);});
+    t.addEventListener('keydown',function(e){
+      var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!d) return;
+      e.preventDefault(); pick(tabs[(i+d+tabs.length)%tabs.length].dataset.lang,true);
+    });
+  });
+  var saved=null; try{saved=localStorage.getItem('tdr-lang');}catch(e){}
+  if(saved&&document.getElementById('txt-'+saved)) pick(saved);
+})();
+</script>
+
+
+<dialog class="viewer" id="viewer"><img id="viewer-img" alt=""></dialog>
+<script>
+(function(){
+  var d=document.getElementById("viewer"),im=document.getElementById("viewer-img");
+  if(!d||!d.showModal) return;
+  document.addEventListener("click",function(e){
+    var b=e.target.closest(".zoom"); if(!b) return;
+    var src=b.querySelector("img"); im.src=b.dataset.full; im.alt=src.alt; d.showModal();
+  });
+  d.addEventListener("click",function(){d.close();});
+})();
+</script>
+</body>
+</html>

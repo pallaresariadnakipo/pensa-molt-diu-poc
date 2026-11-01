@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Memòria · Pensa molt, diu poc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,500;0,600;1,500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Patrick+Hand&display=swap">
+<style>
+/* Lectura contínua: una columna estreta, índex al principi, tornada al dossier sempre a mà */
+:root{
+  --paper:#f7f6f4;--paper-2:#eceae5;--ink:#1d1d1f;--graphite:#646876;--wash:#a8252d;--rule:#e4e2dc;
+  --f-display:"Crimson Pro","Minion Pro",Georgia,serif;
+  --f-body:"Literata",Georgia,"Times New Roman",serif;
+  --f-note:"Patrick Hand","Segoe Print","Bradley Hand",cursive;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1c1d23;--paper-2:#24262e;--ink:#ebe9e3;--graphite:#a6a9b5;--wash:#ec7b80;--rule:#33353e;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#1c1d23;--paper-2:#24262e;--ink:#ebe9e3;--graphite:#a6a9b5;--wash:#ec7b80;--rule:#33353e;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule);margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-block:.7rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.bar-in{max-width:42rem;margin:0 auto;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.bar a{font-family:var(--f-note);font-size:1.15rem;color:var(--graphite);text-decoration:none}
+.bar a:hover{color:var(--ink)}
+main{max-width:42rem;margin:0 auto;padding-block:2.5rem 4rem}
+.eyebrow{font-family:var(--f-note);font-size:1.2rem;color:var(--graphite);margin:0}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;line-height:1.2;text-wrap:balance}
+h1{font-size:clamp(2rem,5vw,2.8rem);margin:.4rem 0 .6rem}
+.by{color:var(--graphite);font-size:.95rem;margin:0 0 2rem}
+h2{font-size:2rem;margin:3.2rem 0 .6rem;padding-top:1.6rem;border-top:1px solid var(--rule);scroll-margin-top:4rem}
+h3{font-size:1.4rem;margin:2rem 0 .4rem}
+h4{font-size:1.15rem;margin:1.4rem 0 .2rem}
+h4.who{font-family:var(--f-note);font-weight:400;font-size:1.15rem;color:var(--graphite);margin:1rem 0 0}
+p{margin:.6rem 0}
+p.q{font-family:var(--f-display);font-weight:600;font-size:1.2rem;margin:2rem 0 .2rem;color:var(--wash)}
+ul{padding-left:1.2rem}
+li{margin:.3rem 0}
+li::marker{color:var(--wash)}
+.toc{background:var(--paper-2);border-radius:6px;padding:1.2rem 1.4rem;margin:0 0 1rem}
+.toc p{font-family:var(--f-note);font-size:1.15rem;color:var(--graphite);margin:0 0 .4rem}
+.toc ol{list-style:none;margin:0;padding:0;columns:2 16rem;column-gap:2rem}
+.toc a{color:var(--ink);text-decoration:none;font-size:.97rem}
+.toc a:hover{color:var(--wash)}
+.biblio{list-style:none;padding:0}
+.biblio li{font-size:.92rem;color:var(--graphite);overflow-wrap:anywhere;margin:.7rem 0}
+a{color:var(--wash)}
+:focus-visible{outline:2px solid var(--wash);outline-offset:3px}
+.back{display:inline-block;margin-top:3rem;font-family:var(--f-note);font-size:1.2rem;color:var(--ink);border:1.5px solid var(--ink);border-radius:6px;padding:.6rem 1.2rem;text-decoration:none}
+.back:hover{background:var(--ink);color:var(--paper)}
+</style>
+</head>
+<body>
+<div class="bar"><div class="bar-in"><a href="index.html">← Tornar al dossier</a><a href="#top">Índex ↑</a></div></div>
+<main id="top">
+  <p class="eyebrow">Treball de recerca · Memòria</p>
+  <h1>La relació entre el text i la imatge en els àlbums il·lustrats</h1>
+  <p class="by">Ariadna Romero · Institut Celestí Bellera · Curs 2025-2026</p>
+  <nav class="toc" aria-label="Índex"><p>Índex</p><ol>
+<li><a href="#s1">1. Introducció</a></li>
+<li><a href="#marc-teoric">2. Marc teòric</a></li>
+<li><a href="#s3">3. Resultats de la recerca</a></li>
+<li><a href="#s4">4. Anàlisi d’exemples</a></li>
+<li><a href="#s5">5. La timidesa</a></li>
+<li><a href="#s6">6. Beneficis dels àlbums il·lustrats en l’educació</a></li>
+<li><a href="#s7">7. Creació del propi àlbum</a></li>
+<li><a href="#s8">8. Conclusions</a></li>
+<li><a href="#s9">9. Procés creatiu del meu propi àlbum il·lustrat</a></li>
+<li><a href="#s10">10. Referències i annexos</a></li>
+  </ol></nav>
+<h2 id="s1">1. Introducció</h2>
+<h3>1.1. Presentació del tema: àlbums il·lustrats i la seva importància</h3>
+<p>Els àlbums il·lustrats són llibres en què el text i la imatge treballen conjuntament per explicar una història. A diferència d’altres tipus de llibres, el significat no es construeix únicament a través del text, sinó també mitjançant les il·lustracions. Així, els dos llenguatges contribueixen a construir el sentit del relat.</p>
+<p>Aquest tipus de llibres tenen un paper especialment important durant la infància, ja que permeten als infants comprendre històries i emocions a través de les imatges, fins i tot abans d’haver adquirit plenament la lectura. A més, són una eina utilitzada tant a l’escola com a casa per introduir els nens i nenes en el món de la lectura i afavorir el desenvolupament de diferents capacitats.</p>
+<h3>1.2. Justificació: per què estudiar la relació entre text i imatge</h3>
+<p>La relació entre el text i la imatge en els àlbums il·lustrats és un aspecte especialment rellevant perquè tots dos elements treballen conjuntament per construir la història, facilitar-ne la comprensió i transmetre emocions.</p>
+<p>Aquest tema m’interessa perquè els àlbums il·lustrats no només expliquen històries, sinó que també poden ajudar els infants a identificar, comprendre i expressar emocions. En aquest treball em centro especialment en la timidesa, una experiència habitual durant la infància que, en alguns casos, pot ser difícil d’expressar amb paraules. La motivació personal pel tema i l’interès per la il·lustració m’han portat a plantejar la creació d’un àlbum propi que pugui oferir als infants un personatge amb qui identificar-se.</p>
+<h3>1.3. Objectius de la recerca</h3>
+<p>L’objectiu principal d’aquest treball és crear un àlbum il·lustrat propi destinat al públic infantil. Per aconseguir-ho, estudiaré com interactuen el text i la imatge en els àlbums il·lustrats i com aquesta relació pot contribuir a transmetre emocions, especialment la timidesa.</p>
+<ul>
+<li>Investigar la importància dels àlbums il·lustrats en l’educació infantil.</li>
+<li>Analitzar com el text i la imatge es complementen per facilitar la comprensió dels infants.</li>
+<li>Estudiar com els àlbums il·lustrats poden representar emocions, especialment la timidesa.</li>
+<li>Analitzar exemples d’àlbums il·lustrats i observar els recursos visuals i narratius que utilitzen.</li>
+<li>Crear un àlbum il·lustrat en què les imatges tinguin un paper rellevant en la narració.</li>
+<li>Dissenyar una història que permeti als infants que experimenten timidesa sentir-se identificats i que ajudi els altres a comprendre aquesta experiència.</li>
+</ul>
+<h3>1.4. Pregunta de recerca</h3>
+<p>La pregunta de recerca que guia aquest treball és: «Com interactuen el text i la imatge en els àlbums il·lustrats per facilitar als infants la comprensió d'emocions com la timidesa?»</p>
+<h3>1.5. Metodologia</h3>
+<p>Per realitzar aquest treball he utilitzat diferents mètodes de recerca. En primer lloc, he dut a terme una recerca d’informació a partir d’articles, pàgines web i altres fonts relacionades amb els àlbums il·lustrats, la relació entre el text i la imatge, la lectura visual i el desenvolupament emocional dels infants.</p>
+<p>En segon lloc, he realitzat entrevistes a mestres d’educació infantil i a una bibliotecària, amb l’objectiu de conèixer com s’utilitzen els àlbums il·lustrats i quina importància tenen en l’aprenentatge, la lectura i el treball de les emocions.</p>
+<p>Finalment, he analitzat diversos àlbums il·lustrats i he creat un àlbum propi, aplicant els coneixements adquirits durant el procés de recerca. La part pràctica, titulada «Pensa molt, diu poc», se centra en la Leia, una nena que té molts pensaments, però que sovint té dificultats per expressar-los verbalment. Aquesta proposta permet aplicar directament els principis estudiats sobre la relació entre text, imatge i emoció.</p>
+<h2 id="marc-teoric">2. Marc teòric</h2>
+<h3>2.1. Definició i característiques dels àlbums il·lustrats</h3>
+<p>Els àlbums il·lustrats són llibres en què el text i la imatge tenen un paper essencial i treballen conjuntament per explicar una història. Es poden entendre com una combinació de literatura i art, ja que uneixen el relat escrit amb les il·lustracions.</p>
+<p>Tot i tenir la forma d’un llibre, allò que fa especialment característic l’àlbum il·lustrat és la relació entre el llenguatge escrit i el visual. Les imatges no tenen únicament una funció decorativa, sinó que poden aportar informació necessària per comprendre completament la història. Per tant, el text i la imatge es complementen i participen conjuntament en la construcció del significat.</p>
+<h3>2.2. Relació entre text i imatge</h3>
+<h4>Funcions de la imatge</h4>
+<p>Les il·lustracions no tenen només una funció decorativa, sinó que també formen part de la narració. Sovint expliquen aspectes de la història que no apareixen explícitament en el text i aporten informació complementària que ajuda a comprendre millor el relat.</p>
+<p>A més, les imatges poden tenir un paper important en la transmissió d’emocions, ja que permeten representar sentiments com la por, la tristesa, l’alegria o la timidesa mitjançant les expressions dels personatges, els colors, els espais o les situacions representades. D’aquesta manera, enriqueixen la lectura i poden facilitar la comprensió de la història, especialment durant les primeres etapes de la infància.</p>
+<h4>Interacció amb el lector</h4>
+<p>En un àlbum il·lustrat, el lector interpreta simultàniament elements textuals i visuals. Aquesta interacció permet establir relacions, fer hipòtesis i completar informació que no sempre apareix de manera explícita. Per això, la lectura de l’àlbum no consisteix únicament a llegir les paraules, sinó també a observar, interpretar i relacionar les imatges amb el text.</p>
+<h3>2.3. La lectura visual i el desenvolupament infantil</h3>
+<p>La lectura visual és la capacitat d’interpretar i comprendre el significat de les imatges, els colors, les formes i les composicions. En els àlbums il·lustrats, aquest tipus de lectura és especialment important en l’educació infantil, ja que molts infants encara no han adquirit plenament la lectoescriptura.</p>
+<p>A través de les il·lustracions, els infants poden seguir la història, entendre què passa i interpretar les emocions dels personatges. Això afavoreix la comprensió de la narració i contribueix a desenvolupar la capacitat d’observació i d’interpretació.</p>
+<p>A més, la lectura visual pot contribuir al desenvolupament del llenguatge, perquè les imatges ajuden els infants a posar paraules a allò que observen; de la creativitat, perquè estimulen la imaginació; i del pensament crític, perquè permeten formular hipòtesis i interpretar diferents significats. Per tant, la lectura visual complementa la lectura textual i pot esdevenir una eina rellevant per al desenvolupament cognitiu i emocional.</p>
+<h4>Comprensió lectora i llenguatge</h4>
+<p>Els àlbums il·lustrats poden contribuir al desenvolupament de la comprensió lectora i del llenguatge. La combinació entre text i imatge facilita que els infants segueixin el fil narratiu i interpretin emocions i situacions.</p>
+<p>També poden afavorir l’ampliació del vocabulari i l’expressió oral, ja que les il·lustracions ofereixen oportunitats per comentar què hi apareix, formular preguntes i expressar opinions. Les imatges permeten interpretar emocions, accions i situacions; quan treballen conjuntament amb el text, la comprensió del relat esdevé més rica.</p>
+<h4>Creativitat i imaginació</h4>
+<p>Les il·lustracions ofereixen un espai perquè els infants explorin diferents estils artístics, colors, formes i composicions. A través de les imatges poden imaginar situacions, interpretar emocions i descobrir diferents maneres d’explicar històries.</p>
+<p>Els àlbums il·lustrats també poden fomentar la creativitat perquè inspiren els infants a imaginar les seves pròpies aventures i personatges. En alguns casos, les il·lustracions permeten completar aspectes de la història que no apareixen escrits, deixant espai a la imaginació del lector.</p>
+<h3>2.4. Àlbums i educació emocional</h3>
+<p>Els àlbums il·lustrats poden tenir un paper important en l’educació emocional dels infants. A través de les històries i les il·lustracions, els nens i nenes poden identificar emocions, entendre millor què senten i trobar formes d’expressar-ho.</p>
+<p>Molts àlbums tracten emocions i situacions quotidianes amb les quals els infants es poden sentir identificats, com la por, la tristesa, la ràbia, la vergonya o la timidesa, entre d’altres. Aquest tipus de relats pot ajudar-los a reconèixer que aquestes emocions formen part de l’experiència humana i que també les poden sentir altres persones.</p>
+<p>Les imatges tenen una funció important en aquest procés, ja que permeten representar emocions de manera visual mitjançant les expressions dels personatges, els colors i els escenaris. Això fa possible que, fins i tot abans de dominar la lectura, els infants puguin interpretar com se sent un personatge.</p>
+<p>A més, els àlbums poden facilitar converses sobre emocions tant a l’escola com a casa. Les mestres entrevistades en aquest treball expliquen que sovint s’utilitzen per parlar de conflictes, sentiments o situacions que apareixen a l’aula.</p>
+<p>En aquest treball m’he volgut centrar especialment en la timidesa, ja que és una experiència present en molts infants i que, en alguns casos, pot resultar difícil d’expressar amb paraules. En aquest sentit, l’àlbum propi parteix d’una experiència interior: la Leia té moltes coses a dir, però la por i la inseguretat dificulten que les pugui expressar.</p>
+<h2 id="s3">3. Resultats de la recerca</h2>
+<h3>3.1. Anàlisi de les entrevistes</h3>
+<p>A partir de les entrevistes realitzades a mestres d’educació infantil i a una bibliotecària, es pot observar que els àlbums il·lustrats són un recurs utilitzat en l’educació infantil i que tenen un paper rellevant en l’aprenentatge i en el desenvolupament emocional dels infants.</p>
+<p>Les escoles són un espai habitual per treballar amb àlbums il·lustrats. Les mestres expliquen que s’utilitzen amb freqüència i que formen part de rutines com l’hora del conte. Aquesta metodologia permet no només escoltar històries, sinó també dialogar, formular hipòtesis i construir significats conjuntament.</p>
+<p>Les entrevistades destaquen que els àlbums afavoreixen el desenvolupament del llenguatge, la comprensió lectora, la imaginació i el pensament crític. També remarquen la importància de la lectura d’imatges, ja que ajuda els infants a interpretar i comprendre millor la història.</p>
+<p>En relació amb la interacció entre text i imatge, consideren que tots dos elements són importants en el procés de comprensió. Les imatges poden actuar com a suport, especialment en infants que encara no han adquirit la lectoescriptura, ja que els ajuden a entendre el relat i a posar paraules a allò que observen.</p>
+<p>Les docents també destaquen l’ús dels àlbums per treballar conflictes i emocions, ja que poden ajudar els infants a expressar-se i a identificar millor els seus sentiments. Tanmateix, la bibliotecària assenyala que els àlbums no s’haurien de reduir únicament al treball de valors, sinó que també tenen una riquesa literària i visual que permet múltiples interpretacions.</p>
+<p>Finalment, les persones a qui he entrevistat coincideixen a destacar el valor dels àlbums il·lustrats per fomentar l’hàbit lector i l’interès per la lectura des de la infància.</p>
+<h2 id="s4">4. Anàlisi d’exemples</h2>
+<h3>4.1. Petita a la jungla</h3>
+<p>He escollit «Petita a la jungla», de Marta Altés, perquè m’interessa especialment la manera com s’organitzen el text i les imatges. Considero que és un exemple útil per analitzar la relació entre aquests dos elements.</p>
+<p>En aquest àlbum, el text és senzill, però les imatges tenen un paper important perquè aporten informació que no sempre apareix escrita. Les il·lustracions també ajuden a transmetre emocions i situacions de manera visual, cosa que pot facilitar la comprensió del relat.</p>
+<p>L’obra tracta aspectes relacionats amb la valentia, la curiositat i l’autosuperació. La protagonista sovint queda enrere o té dificultats per seguir el ritme dels altres. A través d’aquesta situació, el relat presenta un món que pot resultar desconegut o intimidant, però que també ofereix oportunitats per descobrir i aprendre.</p>
+<p>Aquest àlbum és un referent per al meu treball perquè mostra com una història aparentment senzilla pot transmetre emocions mitjançant la relació entre text i imatge. En la meva proposta he volgut aplicar aquest principi a la timidesa, fent que les il·lustracions ajudin a visualitzar allò que la protagonista sent i pensa.</p>
+<h3>4.2. Referents</h3>
+<h4>T'avorreixes, Minimoni?</h4>
+<p>De Rocio Bonilla (Animallibres). M'han inspirat especialment les seves il·lustracions: l'aquarel·la, el traç de llapis que es deixa veure i l'expressivitat dels personatges, molt propers a les tècniques que he fet servir a «Pensa molt, diu poc».</p>
+<h4>La Lola busca l'arc de Sant Martí</h4>
+<p>Text de Naomi Jones i il·lustracions de Gómez (NubeOcho). M'han inspirat les seves il·lustracions, l'ús del fons blanc i la manera de distribuir els elements a la pàgina, que deixa respirar els personatges i fa que l'atenció vagi directament a ells.</p>
+<h3>4.3. Com interactuen el text i la imatge</h3>
+<p>En els àlbums il·lustrats, el lector pot interpretar la història a través de dos llenguatges: el textual i el visual. Tant el text com la imatge tenen una funció narrativa i es complementen per construir el significat.</p>
+<p>Les il·lustracions no només serveixen per decorar, sinó que poden aportar informació sobre les emocions i les situacions que viu el personatge. Les expressions, els colors, els espais i la composició de les pàgines poden transmetre sentiments que no apareixen explícitament en el text.</p>
+<p>El text pot guiar la lectura de manera senzilla, mentre que les imatges poden ampliar aquesta informació i transmetre emocions visualment. Aquesta relació és especialment important en un àlbum com «Pensa molt, diu poc», en què una part essencial del conflicte de la protagonista es troba en allò que pensa, però no aconsegueix dir.</p>
+<h3>4.4. Observacions sobre tècniques artístiques</h3>
+<p>Entre les tècniques tradicionals observades hi ha l’aquarel·la, els llapis de colors i el grafit, el guaix, la tinta i els retoladors, el collage i les tècniques acríliques i a l’oli. També hi ha tècniques digitals, com la il·lustració realitzada amb tauleta gràfica i programes específics, així com tècniques mixtes que combinen diversos procediments.</p>
+<p>Per a la meva creació he optat per un estil manual i expressiu, amb textures i traços visibles. He utilitzat principalment aquarel·les i llapis de colors, ja que aquestes tècniques em permeten aconseguir un resultat proper i adequat a la història.</p>
+<h2 id="s5">5. La timidesa</h2>
+<p>La timidesa es pot manifestar com una sensació d’incomoditat o inseguretat en situacions de relació amb altres persones, especialment quan són noves. Durant la infància pot aparèixer en diferents graus i formar part del desenvolupament de cada infant.</p>
+<p>La timidesa no implica necessàriament una dificultat. Tanmateix, quan interfereix de manera important en les relacions socials o en la participació quotidiana, pot ser necessari oferir a l’infant un entorn segur i oportunitats progressives per desenvolupar confiança.</p>
+<p>Es pot manifestar, entre altres formes, mitjançant poca participació en activitats socials, dificultats per iniciar converses, por de parlar en públic o inseguretat davant de determinades situacions. Per ajudar un infant que experimenta timidesa, és important evitar forçar-lo o etiquetar-lo i, alhora, oferir-li oportunitats de relació progressives i reforçar positivament els seus avenços.</p>
+<h3>5.1. Com representa el meu àlbum la timidesa</h3>
+<p>He decidit treballar la timidesa en el meu àlbum perquè és un tema que m’ha acompanyat des de la infància i perquè considero important contribuir a visibilitzar-lo. En l’àlbum he intentat representar aquesta experiència mitjançant situacions quotidianes en què la timidesa pot aparèixer, de manera que els infants puguin reconèixer-se en contextos propers.</p>
+<p>La protagonista, la Leia, és capaç de parlar, riure i jugar en un entorn en què se sent segura, però fora de casa li costa expressar-se. Aquesta diferència entre els dos espais és un dels recursos narratius principals de l’àlbum.</p>
+<h2 id="s6">6. Beneficis dels àlbums il·lustrats en l’educació</h2>
+<p>Els àlbums il·lustrats aporten diferents beneficis durant la infància i poden constituir una eina educativa significativa. A través d’aquests llibres no només s’expliquen històries, sinó que també es poden treballar aspectes relacionats amb el llenguatge, la imaginació, la creativitat, les emocions i les relacions socials.</p>
+<p>En primer lloc, els àlbums poden contribuir al desenvolupament del llenguatge i la comunicació, ja que permeten ampliar vocabulari, millorar l’expressió oral i comprendre estructures narratives. També afavoreixen l’atenció i l’escolta, perquè els infants han de seguir la història.</p>
+<p>Un altre benefici és el desenvolupament de la imaginació i la creativitat. Les històries i les il·lustracions permeten als infants explorar situacions, personatges i maneres diferents d’entendre el món.</p>
+<p>En l’àmbit emocional, els àlbums poden ajudar a identificar emocions com l’alegria, la por, la tristesa o la ràbia i a posar nom a allò que se sent. També poden afavorir l’empatia, ja que permeten observar situacions des del punt de vista dels personatges.</p>
+<p>A més, poden servir per treballar valors com l’amistat, el respecte o la solidaritat i per fomentar la reflexió. En edats primerenques, especialment entre els tres i els sis anys, les històries senzilles, amb pocs personatges i accions, poden facilitar el seguiment del relat.</p>
+<p>En conjunt, els àlbums il·lustrats permeten treballar de manera integrada el llenguatge, les emocions, la imaginació i el desenvolupament social.</p>
+<h2 id="s7">7. Creació del propi àlbum</h2>
+<h3>7.1. Idea i concepte: l’emoció central, la timidesa</h3>
+<p>La idea principal del meu àlbum va sorgir de la voluntat de representar una emoció que molts infants poden experimentar i que, al mateix temps, pot ser difícil d’expressar i d’entendre: la timidesa. A partir d’aquesta emoció vaig crear la Leia, una nena que té molts pensaments, però que sovint no aconsegueix expressar-los amb paraules. Aquesta idea queda resumida en el mateix títol de l’àlbum: «Pensa molt, diu poc».</p>
+<p>El personatge de la Leia permet mostrar que la timidesa no significa necessàriament no tenir res a dir. Al contrari, ella té moltes idees, opinions i sentiments, però la por d’equivocar-se o de ser jutjada fa que li costi expressar-los. Aquesta situació es fa visible en el pensament «I si m’equivoco?».</p>
+<p>També he volgut mostrar que la timidesa pot variar segons l’entorn. A casa, la Leia és una nena alegre, que riu, juga i parla, mentre que fora de casa es queda en silenci. A l’escola, aquesta situació fa que se senti sola.</p>
+<h3>7.2. Relació entre text i imatge en el procés creatiu</h3>
+<p>En la creació de l’àlbum he considerat que el text i la imatge havien de treballar conjuntament. No volia que les il·lustracions fossin només una representació literal del que explica el text, sinó que també ajudessin a transmetre els pensaments i les emocions de la protagonista.</p>
+<p>Un dels recursos principals és la representació visual dels pensaments de la Leia. El conjunt de línies i gargots que apareix al voltant del seu cap representa tot allò que pensa i es converteix en un element visual fàcil d’identificar.</p>
+<p>També he utilitzat el contrast entre diferents situacions per explicar l’estat emocional del personatge. A casa apareix activa i expressiva, mentre que a l’exterior es mostra més seriosa i silenciosa. Aquesta diferència permet entendre el seu comportament sense necessitat d’explicar-lo completament amb paraules.</p>
+<p>El text és breu i està estretament relacionat amb les imatges. Frases com «Però fora de casa… calla» o «se sent sola» es reforcen visualment mitjançant la manera com es representa la Leia en aquests espais. Així, la relació entre text i imatge permet comprendre tant el que passa exteriorment com el que està passant dins del personatge.</p>
+<h3>7.3. Elecció de tècniques visuals i narrativa</h3>
+<p>Per a les il·lustracions he optat per un estil manual i expressiu, amb dibuixos infantils, textures i traços visibles. Aquesta elecció busca transmetre una sensació propera i emocional, adequada al tipus d’història que volia explicar. He utilitzat aquarel·les i llapis de colors per aportar detall, textura i profunditat.</p>
+<p>Un dels elements visuals més importants és el gargot, que representa els pensaments de la Leia. Aquest element simbolitza tot allò que té al cap i que contribueix a fer que se senti bloquejada. El gargot apareix al llarg de l’àlbum amb diferents mides segons l’estat emocional de la protagonista. Quan se sent més incòmoda o bloquejada, ocupa més espai i adquireix més protagonisme.</p>
+<p>La narrativa també es basa en el contrast. Primer es presenta la Leia i el seu món interior; després es mostra la diferència entre com és a casa i com és fora d’aquest entorn. Més endavant apareix la sensació de solitud que experimenta a l’escola i, finalment, es produeix un petit canvi. La història acaba amb la Leia aconseguint dir «Jo».</p>
+<p>Aquest final és intencionadament senzill. No es tracta que la Leia deixi de ser tímida de cop, sinó de mostrar que fer un petit pas també pot tenir molta importància. Per això, la història acaba amb la idea que, de vegades, una sola paraula ja és molt. Aquesta resolució coincideix amb el final de l’àlbum, en què la protagonista aconsegueix pronunciar «Jo».</p>
+<h3>7.4. Objectius educatius i literaris del meu àlbum</h3>
+<p>Un dels principals objectius educatius de l’àlbum és ajudar els infants a reconèixer i comprendre la timidesa. La història mostra que una persona pot tenir moltes coses a dir encara que no sempre les expressi verbalment.</p>
+<p>També vol transmetre que cada infant té unes característiques i una manera de ser diferents i que és important respectar-les i oferir l’acompanyament necessari perquè tothom es pugui sentir còmode i segur a l’hora d’expressar-se.</p>
+<p>Un altre objectiu és treballar la capacitat de llegir més enllà del text. Les il·lustracions aporten informació sobre els sentiments i l’estat d’ànim de la protagonista que no sempre apareix explicada amb paraules. Això permet que el lector interpreti les imatges, relacioni els elements visuals amb la història i participi activament en la construcció del significat de l’àlbum.</p>
+<h3>7.5. Reflexió sobre el procés i el resultat final</h3>
+<p>La creació d’aquest àlbum m’ha fet entendre que elaborar un àlbum il·lustrat implica molt més que fer dibuixos i escriure una història. Cal pensar en la relació entre tots els elements i decidir com transmetre una emoció tant a través de les paraules com de les imatges.</p>
+<p>Durant el procés, una de les dificultats que he trobat ha estat dibuixar el mateix personatge des de diferents angles i en diverses posicions, ja que no hi estava acostumada. Això m’ha obligat a practicar i a fixar-me més en les proporcions, les expressions i els moviments del personatge.</p>
+<p>Pel que fa al resultat final, considero que l’àlbum aconsegueix transmetre la idea que volia treballar: tenir dificultats per expressar-se no significa no tenir res a dir. El moment en què la Leia finalment diu «Jo» representa un petit canvi respecte del començament de la història. Encara que només sigui una paraula, per a ella significa un inici, i un pas endavant.</p>
+<p>Tot i estar satisfeta amb el resultat i amb tot el que he après durant el procés, també hi ha aspectes que podria millorar. Sobretot, m’hauria agradat tenir més pràctica en la il·lustració dels personatges i disposar de més temps per revisar i perfeccionar alguns detalls. Tot i això, el procés m’ha ajudat a millorar les meves habilitats, a experimentar amb diferents tècniques artístiques i a entendre millor la complexitat que hi ha darrere de la creació d’un àlbum il·lustrat.</p>
+<h2 id="s8">8. Conclusions</h2>
+<h3>8.1. Resum dels resultats de la recerca</h3>
+<p>A partir de la recerca realitzada, he pogut comprovar que els àlbums il·lustrats són molt més que llibres en què les imatges acompanyen un text. El seu valor es troba, en gran part, en la relació que s’estableix entre el llenguatge escrit i el visual. Les il·lustracions poden ampliar la informació del text, aportar elements que no hi apareixen explícitament i transmetre emocions a través de recursos com les expressions, els colors, els espais i la composició.</p>
+<p>La recerca també m’ha permès entendre la importància de la lectura visual durant la infància. Els infants poden interpretar les imatges, formular hipòtesis i comprendre situacions fins i tot abans de dominar plenament la lectura. Per aquest motiu, els àlbums poden contribuir al desenvolupament del llenguatge, la imaginació, la creativitat i la comprensió emocional.</p>
+<p>Les entrevistes realitzades reforcen aquesta idea. Les mestres destaquen l’ús habitual dels àlbums a l’aula i el seu valor per treballar el llenguatge, la comprensió, la imaginació i les emocions. La bibliotecària posa en relleu que el valor dels àlbums no s’hauria de limitar al treball de valors, sinó que també cal considerar-ne la dimensió literària i artística. Aquesta observació m’ha ajudat a entendre que un àlbum pot abordar una emoció sense convertir-se únicament en una eina didàctica.</p>
+<p>Finalment, l’anàlisi d’exemples i el procés de creació del meu propi àlbum m’han permès traslladar aquests aprenentatges a una proposta concreta. En «Pensa molt, diu poc», el text i la imatge es complementen per mostrar una realitat que sovint és difícil d’explicar només amb paraules: la diferència entre allò que la Leia pensa i allò que aconsegueix expressar.</p>
+<h3>8.2. Resposta a la pregunta de recerca</h3>
+<p>La pregunta de recerca plantejada a l’inici era: «Com interactuen el text i la imatge en els àlbums il·lustrats per facilitar als infants la comprensió d'emocions com la timidesa?»</p>
+<p>Després de realitzar la recerca i la part pràctica, considero que el text i la imatge interactuen de manera complementària per construir el significat i transmetre emocions. El text pot explicar o guiar l’acció, mentre que la imatge pot ampliar aquesta informació, mostrar elements que no s’expressen verbalment i fer visible l’estat emocional dels personatges.</p>
+<p>En el meu àlbum aquesta relació és especialment important. La Leia explica molt poc verbalment, però les il·lustracions permeten veure el que passa dins seu. El gargot que representa els seus pensaments, el contrast entre casa i escola i la manera com es representa el personatge ajuden el lector a entendre la seva timidesa. Per tant, la part visual no és un complement del relat, sinó una part essencial de la narració.</p>
+<p>Així, la recerca i la creació de l’àlbum m’han permès respondre la pregunta inicial i entendre que, quan text i imatge estan pensats conjuntament, poden transmetre aspectes emocionals que serien més difícils d’expressar només mitjançant les paraules.</p>
+<h3>8.3. Implicacions educatives i artístiques</h3>
+<p>Des d’un punt de vista educatiu, aquest treball m’ha permès veure que els àlbums il·lustrats poden oferir als infants un espai per parlar d’emocions i situacions que els resulten difícils d’expressar directament. Un personatge com la Leia pot facilitar la identificació i generar converses sobre la timidesa, la inseguretat, la por d’equivocar-se i la necessitat de sentir-se acceptat.</p>
+<p>Des d’un punt de vista artístic, he après que cada decisió visual pot tenir una funció narrativa. Els colors, els traços, la composició, les expressions dels personatges i els elements simbòlics poden contribuir a explicar la història. En el meu cas, el gargot s’ha convertit en un recurs visual que permet representar els pensaments de la protagonista i fer visible el seu conflicte interior.</p>
+<p>El treball també m’ha fet entendre que la creació d’un àlbum il·lustrat requereix revisar constantment la relació entre el que es vol explicar i la manera de representar-ho. No es tracta simplement d’afegir una il·lustració al costat d’un text, sinó de decidir què explica cadascun dels dos llenguatges i què poden explicar conjuntament.</p>
+<p>Pel que fa al meu aprenentatge personal, he adquirit coneixements sobre els àlbums il·lustrats, la lectura visual, la representació d’emocions i el procés de creació artística. També he millorat la meva capacitat per planificar una història, desenvolupar un personatge i mantenir-ne la coherència visual al llarg de diferents escenes. La principal dificultat ha estat representar el mateix personatge en posicions i perspectives diferents, però aquesta dificultat m’ha obligat a practicar i a observar amb més atenció.</p>
+<p>Com a aspecte de millora, considero que una futura versió de l’àlbum podria beneficiar-se de més temps de revisió i d’una pràctica més extensa en la il·lustració de personatges. També seria interessant continuar investigant com reaccionen diferents infants davant de l’àlbum i si les il·lustracions els ajuden realment a identificar i verbalitzar les emocions de la protagonista.</p>
+<p>En definitiva, aquest treball m’ha permès unir una recerca teòrica amb una creació artística pròpia. El resultat no és només l’àlbum «Pensa molt, diu poc», sinó també el procés d’aprenentatge que hi ha darrere. He entès que una història aparentment senzilla pot contenir moltes capes de significat i que, en un àlbum il·lustrat, una imatge també pot dir allò que el personatge no aconsegueix expressar amb paraules. El final de la Leia, quan aconsegueix dir «Jo», resumeix aquesta idea: no cal que el canvi sigui gran perquè tingui significat; de vegades, una sola paraula pot representar un primer pas.</p>
+<h2 id="s9">9. Procés creatiu del meu propi àlbum il·lustrat</h2>
+<h3>9.1. Desenvolupament de la idea inicial</h3>
+<p>La idea de crear Pensa molt, diu poc va sorgir després d'investigar diferents temes que podia tractar. Vaig escollir la timidesa perquè és una experiència amb la qual em sento identificada. Això em va ajudar a imaginar com se sentia la Leia i quines situacions volia representar.</p>
+<p>Des del principi tenia una idea de l'estil de les il·lustracions, però vaig fer moltes proves fins a trobar-ne una versió que m'agradés. La meva exigència i la falta de pràctica i tècnica van fer que el procés fos més difícil del que m'esperava.</p>
+<h3>9.2. Planificació del projecte</h3>
+<p>Primer vaig investigar sobre els àlbums il·lustrats i vaig començar a donar forma a la meva història. Després, vaig fer molts esbossos i proves per trobar l'estil d'il·lustració que més m'agradava i que millor transmetia el que volia explicar.</p>
+<p>Abans de començar les il·lustracions definitives, vaig crear una maqueta per organitzar les escenes i imaginar com quedaria cada pàgina.</p>
+<p>Tot i que tenia bastant clar el que volia aconseguir, em va costar trobar un estil amb què em sentís satisfeta, així que vaig anar fent canvis fins a arribar al resultat que buscava.</p>
+<p>Quan vaig acabar les il·lustracions a mà, les vaig escanejar per passar-les a l'ordinador. Allà vaig fer les últimes correccions, vaig afegir el text i vaig acabar de muntar l'àlbum. Vaig fer diferents proves de maquetació per decidir quines il·lustracions funcionaven millor a cada pàgina. Vaig tenir en compte la distribució del text, la composició de les imatges i la continuïtat de la història fins a aconseguir el muntatge definitiu. Veure totes les pàgines juntes em va ajudar a valorar millor el resultat i a adonar-me de tot el que havia après durant el procés.</p>
+<p>Vaig fer les il·lustracions a mà, utilitzant principalment aquarel·les i llapis de colors. Durant el procés vaig experimentar amb diferents estils i vaig modificar l'aspecte de la Leia fins a aconseguir una imatge més coherent.</p>
+<p>Una de les dificultats principals va ser dibuixar la protagonista des de diferents angles i en diverses posicions. També vaig treballar el gargot que representa els seus pensaments, un element visual important per mostrar allò que no aconsegueix expressar amb paraules.</p>
+<h3>9.3. Resultat final</h3>
+<p>El resultat final és Pensa molt, diu poc, una història sobre la timidesa i les dificultats per expressar allò que sentim. Tot i que les il·lustracions van canviar bastant respecte de les primeres idees, vaig mantenir l'essència de la història i els elements principals de la protagonista.</p>
+<p>Quan vaig veure l'àlbum muntat, vaig poder valorar millor el conjunt i vaig sentir que el text i les imatges funcionaven millor plegats.</p>
+<h3>9.4. Valoració personal</h3>
+<p>Crear aquest àlbum m'ha permès aprendre sobre la il·lustració, la narració visual i la importància de combinar text i imatge. La part que més m'ha costat ha estat dibuixar els personatges en diferents posicions i aconseguir que les il·lustracions s'assemblessin a allò que imaginava.</p>
+<p>Si tornés a fer el projecte, dedicaria més temps a practicar el dibuix i a perfeccionar alguns detalls. Tot i les dificultats, estic satisfeta del resultat perquè he pogut transformar una experiència personal en una història amb què altres infants es poden identificar.</p>
+<h2 id="s10">10. Referències i annexos</h2>
+<h3>ANNEX 1. Entrevistes a mestres d’educació infantil</h3>
+<p>A continuació es presenten les respostes de les tres mestres entrevistades sobre l’ús dels àlbums il·lustrats a l’aula, els aprenentatges que afavoreixen i la seva relació amb el desenvolupament emocional i lector dels infants.</p>
+<p class="q">1. Utilitza àlbums il·lustrats a l’aula? Amb quina freqüència?</p>
+<h4 class="who">Mestra 1</h4>
+<p>Sí. Un cop a la setmana a la franja horària de «L'hora del conte» i després, cada dia busquem una estoneta ja sigui després del pati, abans de marxar... per acabar un conte, fer preguntes, o continuar amb històries curtes...</p>
+<h4 class="who">Mestra 2</h4>
+<p>Sí, sempre que puc.</p>
+<h4 class="who">Mestra 3</h4>
+<p>Sí, gairebé cada dia en faig servir. Escullo un i en una setmana l'explico tres vegades. A l'escola fem lectura dialògica, és una metodologia educativa basada en el diàleg i la participació activa dels infants durant la lectura. No es tracta només de llegir un conte, sinó de parlar sobre el que es llegeix, compartir idees i construir significat entre tots. En la primera lectura llegeixo mentre veuen les imatges, ens fixem en la tapa, parlem de què creiem que anirà el conte, mirem com es diu l'autor/a i l'il·lustrador/a, i en acabar comentem de què ha anat, si els ha agradat... En les altres dues lectures els infants tenen una participació més activa amb preguntes, opinions o interpretacions. D'aquesta manera hi ha una millor comprensió, ho relacionen amb experiències personals i entre tots construïm el significat del text.</p>
+<p>A part, també n'explico per treballar els conflictes que han sortit durant la setmana. Busco molts àlbums que parlin de les emocions ja que a infantil els ajuda a posar paraules als seus sentiments.</p>
+<p>A més, també en faig servir per introduir continguts que es tractaran a l'aula durant aquells dies com per exemple per treballar les estacions.</p>
+<p class="q">2. Quins aprenentatges o competències observa que es desenvolupen quan treballen amb àlbums il·lustrats?</p>
+<h4 class="who">Mestra 1</h4>
+<p>Primer de tot destacar l'atenció, després infinitat d'aprenentatges o mecanismes que s'activen mentre l'expliquem: la concentració, la connexió entre el conte i les experiències prèvies dels infants, la motivació, despertar la imaginació, la lectura d'imatges, «ensenyar a mirar» més enllà, fer deduccions a través de les imatges o el context, expressar valoracions i opinions, respectar el torn de paraula, observar les tècniques que utilitzen els àlbums: ja sigui collage, aquarel·la... els colors utilitzats...</p>
+<h4 class="who">Mestra 2</h4>
+<p>La comprensió lectora, la deducció, formulació d’hipòtesis, resumir…</p>
+<h4 class="who">Mestra 3</h4>
+<p>Els àlbums ens ajuden a introduir i consolidar molts aprenentatges. És un recurs molt potent. Per una banda ens ajuden a treballar tota la part del llenguatge: vocabulari, comprensió oral, estructura de frases, frases fetes... També ens ajuden a iniciar la comprensió lectora, el pensament crític (ja que opinem sobre allò que hem vist o llegit), l'educació emocional, els valors... L'observació de la il·lustració no només com a decoració sinó com una imatge que ens explica coses, que ens fa pensar... Potencia la nostra creativitat i imaginació.</p>
+<p class="q">3. Com interactuen el text i la imatge en el procés de comprensió dels infants?</p>
+<h4 class="who">Mestra 1</h4>
+<p>Un va lligat de la mà de l'altre. Mentre expliquem amb paraules l'àlbum, ha d'anar acompanyat amb la imatge per assegurar la seva comprensió. O per aquells alumnes que més els hi costa, oferir aquestes imatges per tal de reforçar la comprensió de l'àlbum o història.</p>
+<h4 class="who">Mestra 2</h4>
+<p>Les imatges ajuden a la comprensió del text i actuen com a mesura universal de suport.</p>
+<h4 class="who">Mestra 3</h4>
+<p>Quan explico un àlbum els infants d'infantil s'estan fixant en la imatge i jo els ajudo a entendre-la llegint el text ja que, ells encara no saben llegir. Una vegada coneixen la història, el llibre sovint queda al seu abast i ells el miren i el tornen a mirar observant les imatges que els expliquen la història. El text els ajuda a posar paraules a allò que estan veient i la imatge els ajuda a acabar d'entendre allò que han escoltat.</p>
+<p class="q">4. Quin paper creu que tenen en la relació que els infants estableixen amb la lectura?</p>
+<h4 class="who">Mestra 1</h4>
+<p>Doncs quan estan escoltant un conte, la mestra fa de modelatge en tots els sentits, i dona l'oportunitat d'adquirir així nou vocabulari, lèxic, estructures gramaticals, entonacions, fa diàlegs, tonalitats... un seguit d'habilitats que potenciaran la lectura en l'infant.</p>
+<h4 class="who">Mestra 2</h4>
+<p>És el primer contacte per arribar al gust per la lectura.</p>
+<h4 class="who">Mestra 3</h4>
+<p>Els infants que han tingut contacte amb molts àlbums il·lustrats acostumen a mostrar més interès per la lectura, una millor comprensió dels textos i un ús més ric del vocabulari. Amb el temps, aquests moments compartits de lectura, tant a l’escola com a casa amb la família, escoltant i comentant els àlbums, contribueixen a crear l’hàbit lector i a fomentar el gust per la lectura.</p>
+<p class="q">5. Ha utilitzat algun àlbum per treballar valors o educació emocional? Podria explicar alguna experiència concreta?</p>
+<h4 class="who">Mestra 1</h4>
+<p>Sí, molts. De fet, utilitzem els àlbums per introduir un tema, un concepte, una idea, una conversa, un cercle restauratiu... Com a exemple: El punt, El monstre de colors, El banc blau, Ens tractem bé, L'Elmer, El peix irisat, Lili, El fil invisible... Vam fer un cercle restauratiu amb el conte Ens tractem bé ja que va sorgir un conflicte a l'aula i era el moment de tractar-lo. A través de l'àlbum, vam fer les diverses activitats, moltes converses, van donar les seves opinions, es van expressar, i van poder dir cadascú la seva. Vam fer acords: en diem paraules boniques, ens regalem dibuixos i missatges positius, ens parlem bé... A partir d'aquí vam fer una altra activitat que va ser un sociograma amb animals.</p>
+<h4 class="who">Mestra 2</h4>
+<p>Les bruixes d’Arlet. Mostra que no totes les bruixes són dolentes i ajuda a construir nous coneixements.</p>
+<h4 class="who">Mestra 3</h4>
+<p>Sí, com he comentat abans, els faig servir sovint. A l'aula fem cercles restauratius on l'activitat principal és l'explicació d'un àlbum relacionat amb les emocions que ens dóna peu a posar paraules al que passa a l'aula. Aquest curs hem explicat l'àlbum Ens tractem bé, Lili, Neda que neda...</p>
+<p>A I5 sempre treballem també El monstre de colors, ajuda molt als infants a posar paraules als seus sentiments.</p>
+<p>Un altre que m'ha funcionat molt bé és Tinc un volcà, els ajuda a entendre perquè a vegades s'enfaden i ajuda a tenir recursos davant de situacions que els fan enfadar.</p>
+<p class="q">6. Recorda algun àlbum que hagi tingut un impacte especial en els alumnes?</p>
+<h4 class="who">Mestra 1</h4>
+<p>Sí, la veritat que molt d'ells. Lo bonic de la diversitat, és que cada infant s'enganxa amb un conte o altre. Així que cal oferir diversitat de temes, tècniques, històries, per tal que cadascú trobi o descobreixi allò que li agrada i es senti còmode. Podria destacar El peix irisat, ja que els hi crida molt l'atenció per l'escata brillant. A simple vista, la història en sí, sembla senzilla i superficial, però va més enllà. Per exemple, vam parlar que no està bé deixar sol a un peix per ser com és, o «arrencar-li» una escata per tal que pugui tenir amics...</p>
+<h4 class="who">Mestra 2</h4>
+<p>Tots aporten alguna cosa.</p>
+<h4 class="who">Mestra 3</h4>
+<p>Els que he anomenat fins ara. Aquest curs els ha encantat un que es diu Deixa'm en pau! Ens ha ajudat a millorar la relació entre un grupet d'amigues de la classe.</p>
+<p>El fil invisible també els ajuda en la familiarització a l'escola.</p>
+<p class="q">7. Recomanaria l’ús dels àlbums il·lustrats com a eina habitual a totes les escoles? Per què?</p>
+<h4 class="who">Mestra 1</h4>
+<p>Sí, els recomanaria. A més per totes les edats, no només per infantil. Els àlbums no tenen edat, són per qui els troba. Els recomanaria pel ventall de possibilitats que desperten als infants: artístiques, narratives, lingüístiques, imaginatives, de coneixements...</p>
+<h4 class="who">Mestra 2</h4>
+<p>S’han de fer servir per establir les bases d’una bona competència lectora.</p>
+<h4 class="who">Mestra 3</h4>
+<p>Sí, per mi és una eina molt útil. Cal potenciar-los també a primària. A infantil en general es fan servir molt però crec que s'haurien d'utilitzar en tots els nivells.</p>
+<h3>ANNEX 2. Entrevista a una bibliotecària</h3>
+<p>A continuació es presenta l’entrevista realitzada a una bibliotecària sobre la seva trajectòria professional, el paper dels àlbums il·lustrats i la seva contribució a la formació dels lectors.</p>
+<p class="q">1. Podria explicar-nos breument la seva trajectòria professional i la seva vinculació amb la literatura infantil i juvenil?</p>
+<p>Jo vaig estudiar biblioteconomia i documentació, amb la idea de treballar en una biblioteca pública. Quan vaig començar la carrera, jo paral·lelament estava en el món del lleure infantil, feia de cap, i ja tenia relació amb els infants. Vaig anar descobrint la narració oral, i m’interessava cada vegada més el món dels contes. Per això, quan a la carrera vam començar a fer treballs, etc. vaig anar interessant-me en tot el que tenia a veure amb lectura i infància. I d’aquí que vaig anar-me especialitzant en aquest camp. Es podria dir que vaig descobrir la LIJ d’adolescent.</p>
+<p class="q">2. Quina relació té amb els àlbums il·lustrats dins del seu treball a la biblioteca o en projectes de promoció lectora?</p>
+<p>Els àlbums són una part molt important del fons de la biblioteca i per les seves característiques són aptes per tot tipus de públic, no només l’infantil. Això fa que el recomanem molt. A la biblioteca tenim un projecte que es diu laboratoris de lectura i es basa sobretot en la promoció dels àlbums. Et passo un enllaç del blog:</p>
+<p><a href="https://brulab.art" target="_blank" rel="noopener">Brulab.art</a></p>
+<p class="q">3. Des de la seva experiència, quins elements fan que un àlbum il·lustrat sigui especialment recomanable per a infants?</p>
+<p>Allò que fa especial un àlbum és que es tracta d’un suport on s’expliquen obres amb llenguatge textual, però també visual i també material, físic. Què vol dir això? Que els infants tarden uns anys a dominar el llenguatge textual, a aprendre a llegir, però des de ben petits, ja poden aprendre a llegir imatges. Amb els àlbums és ideal aquesta lectura compartida, adult acompanyant i infant. I tots dos van sumant experiències lectores fins a comprendre la història.</p>
+<p class="q">4. Quin paper creu que tenen els àlbums il·lustrats en la formació de l’hàbit lector dels infants?</p>
+<p>Ara mateix, que els nostres infants són d’una generació molt visual, és un element clau envoltar la infància d’àlbums. Es fan edicions molt enginyoses, riques, interessants, diverses i divertides. I és una entrada al món de l’art, bàsica per a l’educació visual. I és una entrada al món literari.</p>
+<p class="q">5. Observa que els àlbums il·lustrats poden contribuir a desenvolupar competències com el llenguatge, la comprensió lectora, l’expressió oral o la creativitat? Podria donar algun exemple?</p>
+<p>La gràcia de l’àlbum és que en un llibre de deu pàgines, pots trobar tota la riquesa i competència literària d’una novel·la de 200 pàgines. No vol dir que sigui idèntic o que una cosa hagi de substituir la resta. Però hi ha àlbums que juguen amb el punt de vista, que tenen un fals narrador, que juguen amb el pas del temps, que utilitzen diferents tècniques artístiques segons aspectes literaris que vol destacar el text... és a dir, que des dels 0 anys, tu ja estàs començant l’itinerari lector dels infants. Quan ells neixen, no tenen un gust estètic adquirit, tot això ho adquireixen a partir de les imatges que veuran, al món, a la tele, la publicitat, la roba, etc. però també és una manera d’educar-los en la diferència, en veure un banc d’imatges ric, sense estereotips. Des de l’inici de l’itinerari lector, quan tu tries els llibres, estàs ajudant a l’infant a adquirir: esperit crític, educació visual, consciència poètica, gust estètic, interès per l’experimentació...</p>
+<p class="q">6. Ha utilitzat algun àlbum il·lustrat per treballar valors, emocions o altres temes relacionats amb l’educació emocional? Podria explicar alguna experiència concreta?</p>
+<p>Jo no sóc massa partidària en utilitzar els àlbums per «treballar valors», perquè la lectura i la literatura, ja són prou importants, com hem vist fins ara, per si soles, perquè ajuden a adquirir llenguatge (i això és bàsic per poder pensar) i ajuden a veure el món des de diferents mirades, i això és bàsic per la democràcia. Indirectament tots els llibres tenen uns valors, però crec que el més important és que literàriament siguin bons, els personatges ben dibuixats, interessants, que permetin sentir-se reflectit i també siguin una porta a la fantasia (mirall i finestra, que deia Jella Lepman).</p>
+<p>Si aquesta pregunta la fas a algú que ha llegit una novel·la, sembla ridícula, cap adult tria un llibre per llegir segons si treballa les emocions...</p>
+<p>Però jo sí que utilitzo llibres que podries treure’n molts aprenentatges, si et refereixes a això: autors com Arnold Lobel, Leo Lionni, Gianni Rodari, Beatrice Alemagna...</p>
+<p class="q">7. Recorda algun àlbum que hagi tingut un impacte especial entre els infants o que destaqui pel seu valor literari i educatiu?</p>
+<p>M’agrada molt explicar aquests tres àlbums:</p>
+<ul>
+<li>Neda que neda, de Leo Lionni.</li>
+<li>El petit globus vermell, de Iela Mari.</li>
+<li>Afortunadament, de Remi Charlip.</li>
+</ul>
+<h3>Bibliografia</h3>
+<ul class="biblio">
+<li>ALOMAR BENNÀSSAR, Bàrbara Maria (2017). El món de les emocions, a partir dels contes, a l’etapa de l’Educació Infantil: expressió i autocontrol. Universitat de les Illes Balears. Disponible a: <a href="https://dspace.uib.es/xmlui/bitstream/handle/11201/2888/Alomar_Bennassar_Barbara_Maria.pdf?sequence=1&amp;isAllowed=y" target="_blank" rel="noopener">https://dspace.uib.es/xmlui/bitstream/handle/11201/2888/Alomar_Bennassar_Barbara_Maria.pdf?sequence=1&amp;isAllowed=y</a> [Consulta: 15 de desembre de 2025].</li>
+<li>AIDA FERNÁNDEZ PSICÓLOGA (s. d.). La timidez infantil. Disponible a: <a href="https://aidafernandezpsicologa.com/la-timidez-infantil/" target="_blank" rel="noopener">https://aidafernandezpsicologa.com/la-timidez-infantil/</a> [Consulta: 16 de desembre de 2025].</li>
+<li>Àlbum il·lustrat (s. d.). Viquipèdia, l’enciclopèdia lliure. Disponible a: <a href="https://ca.wikipedia.org/wiki/Àlbum_il·lustrat" target="_blank" rel="noopener">https://ca.wikipedia.org/wiki/Àlbum_il·lustrat</a> [Consulta: 10 de gener de 2026].</li>
+<li>CONTRA EL CÁNCER (s. d.). Les emocions. Disponible a: <a href="https://www.contraelcancer.es/sites/default/files/migration/actualidad/publicaciones/documentos/les-emocions.pdf" target="_blank" rel="noopener">https://www.contraelcancer.es/sites/default/files/migration/actualidad/publicaciones/documentos/les-emocions.pdf</a> [Consulta: 20 de desembre de 2025].</li>
+<li>DOCENTS.CAT (s. d.). Àlbums il·lustrats. Disponible a: <a href="https://docents.cat/albums-illustrats/" target="_blank" rel="noopener">https://docents.cat/albums-illustrats/</a> [Consulta: 12 de març de 2026].</li>
+<li>DOCENTS.CAT (s. d.). Què és un àlbum il·lustrat i quins són els seus trets característics? Disponible a: <a href="https://docents.cat/masterclass/que-es-un-album-illustrat-i-quins-son-els-seus-trets-caracteristics/" target="_blank" rel="noopener">https://docents.cat/masterclass/que-es-un-album-illustrat-i-quins-son-els-seus-trets-caracteristics/</a> [Consulta: 18 d’abril de 2025].</li>
+<li>DOCENTES ALGAR EDITORIAL (s. d.). Álbumes ilustrados infantiles en el aula. Disponible a: <a href="https://docentes.algareditorial.com/blog/48/albumes-ilustrados-infantiles-aula" target="_blank" rel="noopener">https://docentes.algareditorial.com/blog/48/albumes-ilustrados-infantiles-aula</a> [Consulta: 8 de gener de 2026].</li>
+<li>ESCOLA DE SALUT SANT JOAN DE DÉU (s. d.). Consells per a vèncer la timidesa durant la infància. Disponible a: <a href="https://escolasalut.sjdhospitalbarcelona.org/ca/consells-salut/salut-mental/consells-vencer-timidesa-durant-infancia" target="_blank" rel="noopener">https://escolasalut.sjdhospitalbarcelona.org/ca/consells-salut/salut-mental/consells-vencer-timidesa-durant-infancia</a> [Consulta: 5 de març de 2026].</li>
+<li>FUNDACIÓ MENIÑOS (s. d.). Educación emocional infantil. Disponible a: <a href="https://meninos.org/es/educacion-emocional-infantil/" target="_blank" rel="noopener">https://meninos.org/es/educacion-emocional-infantil/</a> [Consulta: 25 de febrer de 2026].</li>
+<li>FUNDESPLAI (s. d.). Com treballem les emocions amb infants de 3 a 8 anys. Disponible a: <a href="https://esplai.fundesplai.org/wp-content/uploads/sites/40/2017/02/Com-treballem-les-emocions-amb-infants-de-3-a-8-anys.-Origo.pdf" target="_blank" rel="noopener">https://esplai.fundesplai.org/wp-content/uploads/sites/40/2017/02/Com-treballem-les-emocions-amb-infants-de-3-a-8-anys.-Origo.pdf</a> [Consulta: 22 de gener de 2026].</li>
+<li>LIBRERÍA ASTRID (s. d.). Qué es un álbum ilustrado: guía para entenderlo y disfrutarlo. Disponible a: <a href="https://www.libreriaastrid.com/especial/que-es-un-album-ilustrado-guia-para-entenderlo-y-disfrutarlo/73/" target="_blank" rel="noopener">https://www.libreriaastrid.com/especial/que-es-un-album-ilustrado-guia-para-entenderlo-y-disfrutarlo/73/</a> [Consulta: 15 de gener de 2026].</li>
+<li>MINIOPS – INSTITUT OBERT DE CATALUNYA (s. d.). Miniops. Disponible a: <a href="https://miniops.ioc.cat/10/5/index.html" target="_blank" rel="noopener">https://miniops.ioc.cat/10/5/index.html</a> [Consulta: 20 de desembre de 2025].</li>
+<li>SERÀS UIB – UNIVERSITAT DE LES ILLES BALEARS (s. d.). Les emocions: què són, categories, com podem treballar-les... Disponible a: <a href="https://seras.uib.cat/orientacio/recursos/Les-emocions-que-son-categories-com-podem.cid581227" target="_blank" rel="noopener">https://seras.uib.cat/orientacio/recursos/Les-emocions-que-son-categories-com-podem.cid581227</a> [Consulta: 18 de febrer de 2026].</li>
+<li>TOTNENS.CAT (s. d.). La importància dels àlbums il·lustrats. Disponible a: <a href="https://totnens.cat/la-importancia-dels-albums-illustrats/" target="_blank" rel="noopener">https://totnens.cat/la-importancia-dels-albums-illustrats/</a> [Consulta: 14 de desembre de 2025].</li>
+<li>EL SITIO DE LAS PALABRAS (s. d.). Leer una pintura. Disponible a: <a href="https://elsitiodelaspalabras.es/leer-una-pintura/" target="_blank" rel="noopener">https://elsitiodelaspalabras.es/leer-una-pintura/</a> [Consulta: 10 de febrer de 2026].</li>
+</ul>
+  <a class="back" href="index.html">← Tornar al dossier</a>
+</main>
+</body>
+</html>
